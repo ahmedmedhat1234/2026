@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جداول الترتيب - دورة أبو صالح 2026</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(180deg, #0039a6 0%, #003380 100%);
+            min-height: 100vh;
+            padding: 30px 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            color: white;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+        }
+
+        .year {
+            font-size: 2.5em;
+            background: linear-gradient(90deg, #ffd700 0%, #ffed4e 50%, #ffd700 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 900;
+            letter-spacing: 3px;
+        }
+
+        .tables-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .group-table {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .table-header {
+            padding: 20px;
+            text-align: center;
+            color: white;
+            font-weight: 900;
+            font-size: 1.3em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .group-table:nth-child(1) .table-header {
+            background: #22c55e;
+        }
+
+        .group-table:nth-child(2) .table-header {
+            background: #e41e26;
+        }
+
+        .group-table:nth-child(3) .table-header {
+            background: #fbbf24;
+            color: #333;
+        }
+
+        .group-table:nth-child(4) .table-header {
+            background: #e41e26;
+        }
+
+        .group-table:nth-child(5) .table-header {
+            background: #fbbf24;
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        thead {
+            background: #f3f4f6;
+        }
+
+        th {
+            padding: 15px 10px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 0.85em;
+            color: #374151;
+            border-bottom: 2px solid #e5e7eb;
+            text-transform: uppercase;
+        }
+
+        th:first-child {
+            text-align: right;
+            padding-right: 20px;
+        }
+
+        tbody tr {
+            border-bottom: 1px solid #e5e7eb;
+            transition: background 0.2s ease;
+        }
+
+        tbody tr:hover {
+            background: #f9fafb;
+        }
+
+        tbody tr:nth-child(1) {
+            background: #ecfdf5;
+        }
+
+        tbody tr:nth-child(1):hover {
+            background: #d1fae5;
+        }
+
+        td {
+            padding: 15px 10px;
+            text-align: center;
+            font-weight: 600;
+            color: #1f2937;
+        }
+
+        td:first-child {
+            text-align: right;
+            padding-right: 20px;
+            font-weight: 700;
+        }
+
+        .position {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border-radius: 50%;
+            background: #e5e7eb;
+            color: #374151;
+            font-weight: 900;
+            margin-left: 10px;
+            font-size: 0.9em;
+        }
+
+        tbody tr:nth-child(1) .position {
+            background: #22c55e;
+            color: white;
+        }
+
+        .legend {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            margin-top: 30px;
+        }
+
+        .legend h3 {
+            color: #1f2937;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .legend-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .legend-label {
+            font-weight: 700;
+            color: #374151;
+            min-width: 80px;
+        }
+
+        .legend-desc {
+            color: #6b7280;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .stats-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .stats-header {
+            padding: 20px;
+            text-align: center;
+            color: white;
+            font-weight: 900;
+            font-size: 1.3em;
+            background: #0039a6;
+        }
+
+        .stats-table th {
+            background: #f8fafc;
+        }
+
+        .stats-table td {
+            height: 55px;
+        }
+
+        .stat-rank {
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            background: #f1f5f9;
+            border-radius: 50%;
+            display: inline-block;
+            font-weight: 900;
+            color: #64748b;
+        }
+
+        .top-1 .stat-rank {
+            background: #ffd700;
+            color: #854d0e;
+        }
+
+        .top-2 .stat-rank {
+            background: #e2e8f0;
+            color: #475569;
+        }
+
+        .top-3 .stat-rank {
+            background: #ffedd5;
+            color: #9a3412;
+        }
+
+        @media (max-width: 768px) {
+
+            .tables-grid,
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .year {
+                font-size: 1.8em;
+            }
+
+            th,
+            td {
+                padding: 10px 5px;
+                font-size: 0.85em;
+            }
+
+            th:first-child,
+            td:first-child {
+                padding-right: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>جداول الترتيب</h1>
+            <div class="year">2026</div>
+        </div>
+
+        <div class="tables-grid">
+            <!-- المجموعة الأولى -->
+            <div class="group-table">
+                <div class="table-header">المجموعة أ</div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>الفريق</th>
+                            <th>لعب</th>
+                            <th>ف</th>
+                            <th>ت</th>
+                            <th>خ</th>
+                            <th>له</th>
+                            <th>عليه</th>
+                            <th>الفارق</th>
+                            <th>النقاط</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="position">1</span>إسلام حسن</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td><strong>0</strong></td>
+                        </tr>
+                        <tr>
+                            <td><span class="position">2</span>عبده ربيع</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td><strong>0</strong></td>
+                        </tr>
+                        <tr>
+                            <td><span class="position">3</span>أحمد محسن</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td><strong>0</strong></td>
+                        </tr>
+                        <tr>
+                            <td><span class="position">4</span>زياد عبد الوهاب</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td><strong>0</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- المجموعة الثانية -->
+            <div class="group-table">
+                <div class="table-header">المجموعة ب</div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>الفريق</th>
+                            <th>لعب</th>
+                            <th>ف</th>
+                            <th>ت</th>
+                            <th>خ</th>
+                            <th>له</th>
+                            <th>عليه</th>
+                            <th>الفارق</th>
+                            <th>النقاط</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="position">1</span>العدلي</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td><strong>0</strong></td>
+                        </tr>
+                        <tr>
+                            <td><span class="position">2</span>عمرو عون</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td><strong>0</strong></td>
+                        </tr>
+                        <tr>
+                            <td><span class="position">3</span>محمد سامح</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td><strong>0</strong></td>
+                        </tr>
+                        <tr>
+                            <td><span class="position">4</span>محمد مصطفى قاسم</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td><strong>0</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- المجموعة الثالثة -->
+            <div class="group-table">
+                <div class="table-header">المجموعة ج</div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>الفريق</th>
+                            <th>لعب</th>
+                            <th>ف</th>
+                            <th>ت</th>
+                            <th>خ</th>
+                            <th>له</th>
+                            <th>عليه</th>
+                            <th>الفارق</th>
+                            <th>النقاط</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="position">1</span>محمد سالم</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td><strong>0</strong></td>
+                        </tr>
+                        <tr>
+                            <td><span class="position">2</span>يوسف التهامي</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td><strong>0</strong></td>
+                        </tr>
+                        <tr>
+                            <td><span class="position">3</span>إبراهيم علاء</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td><strong>0</strong></td>
+                        </tr>
+                        <tr>
+                            <td><span class="position">4</span>أحمد عماد</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td><strong>0</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- المجموعة الرابعة -->
+            <div class="group-table">
+                <div class="table-header">المجموعة د</div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>الفريق</th>
+                            <th>لعب</th>
+                            <th>ف</th>
+                            <th>ت</th>
+                            <th>خ</th>
+                            <th>له</th>
+                            <th>عليه</th>
+                            <th>الفارق</th>
+                            <th>النقاط</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="position">1</span>أشرف شوقي</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td><strong>0</strong></td>
+                        </tr>
+                        <tr>
+                            <td><span class="position">2</span>وليد ممدوح</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td><strong>0</strong></td>
+                        </tr>
+                        <tr>
+                            <td><span class="position">3</span>أنطونيادس</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td><strong>0</strong></td>
+                        </tr>
+                        <tr>
+                            <td><span class="position">4</span>روزة</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td><strong>0</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- المجموعة الخامسة -->
+            <div class="group-table">
+                <div class="table-header">المجموعة هـ</div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>الفريق</th>
+                            <th>لعب</th>
+                            <th>ف</th>
+                            <th>ت</th>
+                            <th>خ</th>
+                            <th>له</th>
+                            <th>عليه</th>
+                            <th>الفارق</th>
+                            <th>النقاط</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="position">1</span>أحمد منفي</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td><strong>0</strong></td>
+                        </tr>
+                        <tr>
+                            <td><span class="position">2</span>الوراقية</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td><strong>0</strong></td>
+                        </tr>
+                        <tr>
+                            <td><span class="position">3</span>محمد رجب</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td><strong>0</strong></td>
+                        </tr>
+                        <tr>
+                            <td><span class="position">4</span>معاذ شريف</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td><strong>0</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="stats-grid">
+            <!-- أفضل هداف -->
+            <div class="stats-card">
+                <div class="stats-header">أفضل هداف</div>
+                <table class="stats-table">
+                    <thead>
+                        <tr>
+                            <th>الترتيب</th>
+                            <th style="text-align: right;">اللاعب</th>
+                            <th>الأهداف</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="top-1">
+                            <td><span class="stat-rank">1</span></td>
+                            <td style="text-align: right;">-</td>
+                            <td><strong>-</strong></td>
+                        </tr>
+                        <tr class="top-2">
+                            <td><span class="stat-rank">2</span></td>
+                            <td style="text-align: right;">-</td>
+                            <td><strong>-</strong></td>
+                        </tr>
+                        <tr class="top-3">
+                            <td><span class="stat-rank">3</span></td>
+                            <td style="text-align: right;">-</td>
+                            <td><strong>-</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- أفضل حارس -->
+            <div class="stats-card">
+                <div class="stats-header">أفضل حارس</div>
+                <table class="stats-table">
+                    <thead>
+                        <tr>
+                            <th>الترتيب</th>
+                            <th style="text-align: right;">الحارس</th>
+                            <th>شباك نظيفة</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="top-1">
+                            <td><span class="stat-rank">1</span></td>
+                            <td style="text-align: right;">-</td>
+                            <td><strong>-</strong></td>
+                        </tr>
+                        <tr class="top-2">
+                            <td><span class="stat-rank">2</span></td>
+                            <td style="text-align: right;">-</td>
+                            <td><strong>-</strong></td>
+                        </tr>
+                        <tr class="top-3">
+                            <td><span class="stat-rank">3</span></td>
+                            <td style="text-align: right;">-</td>
+                            <td><strong>-</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="legend">
+            <h3>شرح الرموز:</h3>
+            <div class="legend-items">
+                <div class="legend-item">
+                    <span class="legend-label">لعب:</span>
+                    <span class="legend-desc">المباريات التي لعبها الفريق</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-label">ف:</span>
+                    <span class="legend-desc">الفوز</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-label">ت:</span>
+                    <span class="legend-desc">التعادل</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-label">خ:</span>
+                    <span class="legend-desc">الخسارة</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-label">له:</span>
+                    <span class="legend-desc">الأهداف المسجلة</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-label">عليه:</span>
+                    <span class="legend-desc">الأهداف المستقبلة</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-label">الفارق:</span>
+                    <span class="legend-desc">فارق الأهداف</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-label">النقاط:</span>
+                    <span class="legend-desc">إجمالي النقاط (الفوز 3 - التعادل 1)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
