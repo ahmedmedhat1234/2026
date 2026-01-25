@@ -264,6 +264,77 @@
             color: #9a3412;
         }
 
+        .schedule-section {
+            margin-top: 40px;
+            color: white;
+        }
+
+        .schedule-title {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .days-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+        }
+
+        .day-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .day-header {
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            font-weight: bold;
+            font-size: 1.2em;
+            color: #ffd700;
+            text-align: center;
+        }
+
+        .match-item {
+            background: rgba(255, 255, 255, 0.05);
+            margin-bottom: 10px;
+            padding: 12px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            transition: transform 0.2s;
+        }
+
+        .match-item:hover {
+            transform: scale(1.02);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .match-group {
+            font-size: 0.85em;
+            color: #ffd700;
+            font-weight: bold;
+        }
+
+        .match-teams {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .vs {
+            color: #ffd700;
+            font-size: 0.9em;
+            margin: 0 10px;
+        }
+
         @media (max-width: 768px) {
 
             .tables-grid,
@@ -695,6 +766,215 @@
                         </tr>
                     </tbody>
                 </table>
+            </div>
+        </div>
+
+        <div class="schedule-section">
+            <h2 class="schedule-title">جدول المباريات</h2>
+            <div class="days-grid">
+                <!-- اليوم الأول -->
+                <div class="day-card">
+                    <div class="day-header">اليوم الأول: الأربعاء 28 يناير</div>
+                    <div class="match-item">
+                        <div class="match-group">المجموعة 2</div>
+                        <div class="match-teams"><span>العدلي</span> <span class="vs">VS</span> <span>عمرو عون</span></div>
+                    </div>
+                    <div class="match-item">
+                        <div class="match-group">المجموعة 3</div>
+                        <div class="match-teams"><span>محمد سالم</span> <span class="vs">VS</span> <span>أحمد عماد</span></div>
+                    </div>
+                    <div class="match-item">
+                        <div class="match-group">المجموعة 1</div>
+                        <div class="match-teams"><span>إسلام حسن</span> <span class="vs">VS</span> <span>عبده ربيع</span></div>
+                    </div>
+                </div>
+
+                <!-- اليوم الثاني -->
+                <div class="day-card">
+                    <div class="day-header">اليوم الثاني</div>
+                    <div class="match-item">
+                        <div class="match-group">المجموعة 4</div>
+                        <div class="match-teams"><span>أشرف شوقي</span> <span class="vs">VS</span> <span>وليد ممدوح</span></div>
+                    </div>
+                    <div class="match-item">
+                        <div class="match-group">المجموعة 5</div>
+                        <div class="match-teams"><span>أحمد منفي</span> <span class="vs">VS</span> <span>الوراقية</span></div>
+                    </div>
+                    <div class="match-item">
+                        <div class="match-group">المجموعة 6</div>
+                        <div class="match-teams"><span>نسور البيضا</span> <span class="vs">VS</span> <span>منتخب البيضا</span></div>
+                    </div>
+                </div>
+
+                <!-- اليوم الثالث -->
+                <div class="day-card">
+                    <div class="day-header">اليوم الثالث</div>
+                    <div class="match-item">
+                        <div class="match-group">المجموعة 1</div>
+                        <div class="match-teams"><span>أحمد محسن</span> <span class="vs">VS</span> <span>زياد عبد الوهاب</span></div>
+                    </div>
+                    <div class="match-item">
+                        <div class="match-group">المجموعة 2</div>
+                        <div class="match-teams"><span>محمد سامح</span> <span class="vs">VS</span> <span>محمد مصطفى قاسم</span></div>
+                    </div>
+                    <div class="match-item">
+                        <div class="match-group">المجموعة 3</div>
+                        <div class="match-teams"><span>يوسف التهامي</span> <span class="vs">VS</span> <span>إبراهيم علاء</span></div>
+                    </div>
+                </div>
+
+                <!-- اليوم الرابع -->
+                <div class="day-card">
+                    <div class="day-header">اليوم الرابع</div>
+                    <div class="match-item">
+                        <div class="match-group">المجموعة 4</div>
+                        <div class="match-teams"><span>أنطونياديس</span> <span class="vs">VS</span> <span>روزة</span></div>
+                    </div>
+                    <div class="match-item">
+                        <div class="match-group">المجموعة 5</div>
+                        <div class="match-teams"><span>محمد رجب</span> <span class="vs">VS</span> <span>معاذ شريف</span></div>
+                    </div>
+                    <div class="match-item">
+                        <div class="match-group">المجموعة 6</div>
+                        <div class="match-teams"><span>القصر</span> <span class="vs">VS</span> <span>العريشة</span></div>
+                    </div>
+                </div>
+
+                <!-- اليوم الخامس -->
+                <div class="day-card">
+                    <div class="day-header">اليوم الخامس</div>
+                    <div class="match-item">
+                        <div class="match-group">المجموعة 1</div>
+                        <div class="match-teams"><span>إسلام حسن</span> <span class="vs">VS</span> <span>أحمد محسن</span></div>
+                    </div>
+                    <div class="match-item">
+                        <div class="match-group">المجموعة 2</div>
+                        <div class="match-teams"><span>العدلي</span> <span class="vs">VS</span> <span>محمد سامح</span></div>
+                    </div>
+                    <div class="match-item">
+                        <div class="match-group">المجموعة 3</div>
+                        <div class="match-teams"><span>محمد سالم</span> <span class="vs">VS</span> <span>يوسف التهامي</span></div>
+                    </div>
+                </div>
+
+                <!-- اليوم السادس -->
+                <div class="day-card">
+                    <div class="day-header">اليوم السادس</div>
+                    <div class="match-item">
+                        <div class="match-group">المجموعة 4</div>
+                        <div class="match-teams"><span>أشرف شوقي</span> <span class="vs">VS</span> <span>أنطونياديس</span></div>
+                    </div>
+                    <div class="match-item">
+                        <div class="match-group">المجموعة 5</div>
+                        <div class="match-teams"><span>أحمد منفي</span> <span class="vs">VS</span> <span>محمد رجب</span></div>
+                    </div>
+                    <div class="match-item">
+                        <div class="match-group">المجموعة 6</div>
+                        <div class="match-teams"><span>نسور البيضا</span> <span class="vs">VS</span> <span>القصر</span></div>
+                    </div>
+                </div>
+
+                <!-- اليوم السابع -->
+                <div class="day-card">
+                    <div class="day-header">اليوم السابع</div>
+                    <div class="match-item">
+                        <div class="match-group">المجموعة 1</div>
+                        <div class="match-teams"><span>عبده ربيع</span> <span class="vs">VS</span> <span>زياد عبد الوهاب</span></div>
+                    </div>
+                    <div class="match-item">
+                        <div class="match-group">المجموعة 2</div>
+                        <div class="match-teams"><span>عمرو عون</span> <span class="vs">VS</span> <span>محمد مصطفى قاسم</span></div>
+                    </div>
+                    <div class="match-item">
+                        <div class="match-group">المجموعة 3</div>
+                        <div class="match-teams"><span>إبراهيم علاء</span> <span class="vs">VS</span> <span>أحمد عماد</span></div>
+                    </div>
+                </div>
+
+                <!-- اليوم الثامن -->
+                <div class="day-card">
+                    <div class="day-header">اليوم الثامن</div>
+                    <div class="match-item">
+                        <div class="match-group">المجموعة 4</div>
+                        <div class="match-teams"><span>وليد ممدوح</span> <span class="vs">VS</span> <span>روزة</span></div>
+                    </div>
+                    <div class="match-item">
+                        <div class="match-group">المجموعة 5</div>
+                        <div class="match-teams"><span>الوراقية</span> <span class="vs">VS</span> <span>معاذ شريف</span></div>
+                    </div>
+                    <div class="match-item">
+                        <div class="match-group">المجموعة 6</div>
+                        <div class="match-teams"><span>منتخب البيضا</span> <span class="vs">VS</span> <span>العريشة</span></div>
+                    </div>
+                </div>
+
+                <!-- اليوم التاسع -->
+                <div class="day-card">
+                    <div class="day-header">اليوم التاسع</div>
+                    <div class="match-item">
+                        <div class="match-group">المجموعة 1</div>
+                        <div class="match-teams"><span>إسلام حسن</span> <span class="vs">VS</span> <span>زياد عبد الوهاب</span></div>
+                    </div>
+                    <div class="match-item">
+                        <div class="match-group">المجموعة 2</div>
+                        <div class="match-teams"><span>العدلي</span> <span class="vs">VS</span> <span>محمد مصطفى قاسم</span></div>
+                    </div>
+                    <div class="match-item">
+                        <div class="match-group">المجموعة 3</div>
+                        <div class="match-teams"><span>محمد سالم</span> <span class="vs">VS</span> <span>إبراهيم علاء</span></div>
+                    </div>
+                </div>
+
+                <!-- اليوم العاشر -->
+                <div class="day-card">
+                    <div class="day-header">اليوم العاشر</div>
+                    <div class="match-item">
+                        <div class="match-group">المجموعة 4</div>
+                        <div class="match-teams"><span>أشرف شوقي</span> <span class="vs">VS</span> <span>روزة</span></div>
+                    </div>
+                    <div class="match-item">
+                        <div class="match-group">المجموعة 5</div>
+                        <div class="match-teams"><span>أحمد منفي</span> <span class="vs">VS</span> <span>معاذ شريف</span></div>
+                    </div>
+                    <div class="match-item">
+                        <div class="match-group">المجموعة 6</div>
+                        <div class="match-teams"><span>نسور البيضا</span> <span class="vs">VS</span> <span>العريشة</span></div>
+                    </div>
+                </div>
+
+                <!-- اليوم الحادي عشر -->
+                <div class="day-card">
+                    <div class="day-header">اليوم الحادي عشر</div>
+                    <div class="match-item">
+                        <div class="match-group">المجموعة 1</div>
+                        <div class="match-teams"><span>عبده ربيع</span> <span class="vs">VS</span> <span>أحمد محسن</span></div>
+                    </div>
+                    <div class="match-item">
+                        <div class="match-group">المجموعة 2</div>
+                        <div class="match-teams"><span>عمرو عون</span> <span class="vs">VS</span> <span>محمد سامح</span></div>
+                    </div>
+                    <div class="match-item">
+                        <div class="match-group">المجموعة 3</div>
+                        <div class="match-teams"><span>يوسف التهامي</span> <span class="vs">VS</span> <span>أحمد عماد</span></div>
+                    </div>
+                </div>
+
+                <!-- اليوم الثاني عشر -->
+                <div class="day-card">
+                    <div class="day-header">اليوم الثاني عشر</div>
+                    <div class="match-item">
+                        <div class="match-group">المجموعة 4</div>
+                        <div class="match-teams"><span>وليد ممدوح</span> <span class="vs">VS</span> <span>أنطونياديس</span></div>
+                    </div>
+                    <div class="match-item">
+                        <div class="match-group">المجموعة 5</div>
+                        <div class="match-teams"><span>الوراقية</span> <span class="vs">VS</span> <span>محمد رجب</span></div>
+                    </div>
+                    <div class="match-item">
+                        <div class="match-group">المجموعة 6</div>
+                        <div class="match-teams"><span>منتخب البيضا</span> <span class="vs">VS</span> <span>القصر</span></div>
+                    </div>
+                </div>
             </div>
         </div>
 
