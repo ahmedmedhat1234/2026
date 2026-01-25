@@ -335,6 +335,69 @@
             margin: 0 10px;
         }
 
+        /* Knockout Bracket Styles */
+        .knockout-section {
+            margin-top: 60px;
+            padding: 40px 20px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+            overflow-x: auto;
+        }
+
+        .bracket-container {
+            display: flex;
+            justify-content: space-around;
+            min-width: 1000px;
+            gap: 20px;
+        }
+
+        .round {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            flex: 1;
+        }
+
+        .round-title {
+            text-align: center;
+            color: #ffd700;
+            font-weight: bold;
+            margin-bottom: 20px;
+            font-size: 1.2em;
+            text-transform: uppercase;
+        }
+
+        .matchup {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            margin: 10px 0;
+            padding: 10px;
+            width: 220px;
+            position: relative;
+        }
+
+        .matchup-team {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 10px;
+            color: white;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        .matchup-team:first-child {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .matchup-team span:last-child {
+            color: #ffd700;
+        }
+
+        .winner {
+            color: #22c55e !important;
+        }
+
         @media (max-width: 768px) {
 
             .tables-grid,
@@ -973,6 +1036,91 @@
                     <div class="match-item">
                         <div class="match-group">المجموعة 6</div>
                         <div class="match-teams"><span>منتخب البيضا</span> <span class="vs">VS</span> <span>القصر</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="knockout-section">
+            <h2 class="schedule-title">أدوار خروج المغلوب</h2>
+            <div class="bracket-container">
+                <!-- دور الـ 16 -->
+                <div class="round">
+                    <div class="round-title">دور الـ 16</div>
+                    <div class="matchup">
+                        <div class="matchup-team"><span>أول المجموعة 1</span><span>-</span></div>
+                        <div class="matchup-team"><span>ثاني المجموعة 2</span><span>-</span></div>
+                    </div>
+                    <div class="matchup">
+                        <div class="matchup-team"><span>أول المجموعة 3</span><span>-</span></div>
+                        <div class="matchup-team"><span>التالت 1</span><span>-</span></div>
+                    </div>
+                    <div class="matchup">
+                        <div class="matchup-team"><span>أول المجموعة 5</span><span>-</span></div>
+                        <div class="matchup-team"><span>ثاني المجموعة 6</span><span>-</span></div>
+                    </div>
+                    <div class="matchup">
+                        <div class="matchup-team"><span>أول المجموعة 2</span><span>-</span></div>
+                        <div class="matchup-team"><span>التالت 2</span><span>-</span></div>
+                    </div>
+                    <div class="matchup">
+                        <div class="matchup-team"><span>أول المجموعة 4</span><span>-</span></div>
+                        <div class="matchup-team"><span>ثاني المجموعة 3</span><span>-</span></div>
+                    </div>
+                    <div class="matchup">
+                        <div class="matchup-team"><span>أول المجموعة 6</span><span>-</span></div>
+                        <div class="matchup-team"><span>التالت 3</span><span>-</span></div>
+                    </div>
+                    <div class="matchup">
+                        <div class="matchup-team"><span>ثاني المجموعة 1</span><span>-</span></div>
+                        <div class="matchup-team"><span>ثاني المجموعة 4</span><span>-</span></div>
+                    </div>
+                    <div class="matchup">
+                        <div class="matchup-team"><span>ثاني المجموعة 5</span><span>-</span></div>
+                        <div class="matchup-team"><span>التالت 4</span><span>-</span></div>
+                    </div>
+                </div>
+
+                <!-- ربع النهائي -->
+                <div class="round">
+                    <div class="round-title">ربع النهائي</div>
+                    <div class="matchup">
+                        <div class="matchup-team"><span>فائز مباراة 1</span><span>-</span></div>
+                        <div class="matchup-team"><span>فائز مباراة 2</span><span>-</span></div>
+                    </div>
+                    <div class="matchup">
+                        <div class="matchup-team"><span>فائز مباراة 3</span><span>-</span></div>
+                        <div class="matchup-team"><span>فائز مباراة 4</span><span>-</span></div>
+                    </div>
+                    <div class="matchup">
+                        <div class="matchup-team"><span>فائز مباراة 5</span><span>-</span></div>
+                        <div class="matchup-team"><span>فائز مباراة 6</span><span>-</span></div>
+                    </div>
+                    <div class="matchup">
+                        <div class="matchup-team"><span>فائز مباراة 7</span><span>-</span></div>
+                        <div class="matchup-team"><span>فائز مباراة 8</span><span>-</span></div>
+                    </div>
+                </div>
+
+                <!-- نصف النهائي -->
+                <div class="round">
+                    <div class="round-title">نصف النهائي</div>
+                    <div class="matchup">
+                        <div class="matchup-team"><span>فائز ربع 1</span><span>-</span></div>
+                        <div class="matchup-team"><span>فائز ربع 2</span><span>-</span></div>
+                    </div>
+                    <div class="matchup">
+                        <div class="matchup-team"><span>فائز ربع 3</span><span>-</span></div>
+                        <div class="matchup-team"><span>فائز ربع 4</span><span>-</span></div>
+                    </div>
+                </div>
+
+                <!-- النهائي -->
+                <div class="round">
+                    <div class="round-title">النهائي</div>
+                    <div class="matchup" style="border: 2px solid #ffd700; background: rgba(255, 215, 0, 0.1);">
+                        <div class="matchup-team"><span>فائز نصف 1</span><span>-</span></div>
+                        <div class="matchup-team"><span>فائز نصف 2</span><span>-</span></div>
                     </div>
                 </div>
             </div>
