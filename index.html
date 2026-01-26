@@ -4,19 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>جداول الترتيب - دورة أبو صالح 2026</title>
+    <title>دورة أبو صالح 2026 - التميز والشفافية</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary-gold: #ffd700;
+            --luxury-blue: #001f3f;
+            --deep-blue: #000b18;
+            --accent-blue: #0039a6;
+            --text-white: #ffffff;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
         }
 
         body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(180deg, #0039a6 0%, #003380 100%);
+            background: radial-gradient(circle at top, var(--accent-blue) 0%, var(--deep-blue) 100%);
+            color: var(--text-white);
             min-height: 100vh;
-            padding: 30px 20px;
+            padding: 40px 20px;
+            line-height: 1.6;
         }
 
         .container {
@@ -26,76 +39,86 @@
 
         .header {
             text-align: center;
-            margin-bottom: 40px;
-            color: white;
+            margin-bottom: 60px;
+            position: relative;
         }
 
-        h1 {
-            font-size: 2.5em;
+        .header h1 {
+            font-size: 3.5em;
+            font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 2px;
             margin-bottom: 10px;
-            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+            background: linear-gradient(to bottom, #fff 0%, #ccc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 10px 20px rgba(0,0,0,0.3);
         }
 
         .year {
-            font-size: 2.5em;
-            background: linear-gradient(90deg, #ffd700 0%, #ffed4e 50%, #ffd700 100%);
+            font-size: 3em;
+            background: linear-gradient(90deg, #ffd700 0%, #fff 50%, #ffd700 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
             font-weight: 900;
-            letter-spacing: 3px;
+            letter-spacing: 5px;
         }
 
+        .section-title {
+            text-align: center;
+            font-size: 2.2em;
+            margin: 50px 0 30px;
+            color: var(--primary-gold);
+            text-transform: uppercase;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .section-title::before, .section-title::after {
+            content: "";
+            height: 2px;
+            width: 100px;
+            background: linear-gradient(90deg, transparent, var(--primary-gold));
+        }
+
+        .section-title::after {
+            background: linear-gradient(270deg, transparent, var(--primary-gold));
+        }
+
+        /* Tables Grid */
         .tables-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
             gap: 30px;
-            margin-bottom: 30px;
+            margin-bottom: 50px;
         }
 
         .group-table {
-            background: white;
-            border-radius: 15px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .group-table:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            border-color: var(--primary-gold);
         }
 
         .table-header {
             padding: 20px;
             text-align: center;
-            color: white;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--primary-gold);
             font-weight: 900;
-            font-size: 1.3em;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .group-table:nth-child(1) .table-header {
-            background: #22c55e;
-        }
-
-        .group-table:nth-child(2) .table-header {
-            background: #e41e26;
-        }
-
-        .group-table:nth-child(3) .table-header {
-            background: #fbbf24;
-            color: #333;
-        }
-
-        .group-table:nth-child(4) .table-header {
-            background: #e41e26;
-        }
-
-        .group-table:nth-child(5) .table-header {
-            background: #fbbf24;
-            color: #333;
-        }
-
-        .group-table:nth-child(6) .table-header {
-            background: #8b5cf6;
+            font-size: 1.5em;
+            border-bottom: 1px solid var(--glass-border);
         }
 
         table {
@@ -103,370 +126,111 @@
             border-collapse: collapse;
         }
 
-        thead {
-            background: #f3f4f6;
-        }
-
         th {
-            padding: 15px 10px;
+            padding: 15px;
+            background: rgba(0,0,0,0.2);
+            color: #aaa;
+            font-size: 0.9em;
             text-align: center;
-            font-weight: 700;
-            font-size: 0.85em;
-            color: #374151;
-            border-bottom: 2px solid #e5e7eb;
-            text-transform: uppercase;
-        }
-
-        th:first-child {
-            text-align: right;
-            padding-right: 20px;
-        }
-
-        tbody tr {
-            border-bottom: 1px solid #e5e7eb;
-            transition: background 0.2s ease;
-        }
-
-        tbody tr:hover {
-            background: #f9fafb;
-        }
-
-        tbody tr:nth-child(1) {
-            background: #ecfdf5;
-        }
-
-        tbody tr:nth-child(1):hover {
-            background: #d1fae5;
         }
 
         td {
-            padding: 15px 10px;
+            padding: 15px;
             text-align: center;
+            border-bottom: 1px solid var(--glass-border);
             font-weight: 600;
-            color: #1f2937;
         }
 
-        td:first-child {
-            text-align: right;
-            padding-right: 20px;
-            font-weight: 700;
+        tr:last-child td {
+            border-bottom: none;
         }
 
         .position {
             display: inline-block;
-            width: 30px;
-            height: 30px;
-            line-height: 30px;
-            text-align: center;
+            width: 28px;
+            height: 28px;
+            line-height: 28px;
             border-radius: 50%;
-            background: #e5e7eb;
-            color: #374151;
-            font-weight: 900;
+            background: rgba(255,255,255,0.1);
             margin-left: 10px;
-            font-size: 0.9em;
+            font-size: 0.8em;
         }
 
-        tbody tr:nth-child(1) .position {
-            background: #22c55e;
-            color: white;
-        }
-
-        .legend {
-            background: white;
-            border-radius: 15px;
-            padding: 25px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            margin-top: 30px;
-        }
-
-        .legend h3 {
-            color: #1f2937;
-            margin-bottom: 15px;
-            font-size: 1.2em;
-        }
-
-        .legend-items {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .legend-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .legend-label {
-            font-weight: 700;
-            color: #374151;
-            min-width: 80px;
-        }
-
-        .legend-desc {
-            color: #6b7280;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
-        }
-
-        .stats-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .stats-header {
-            padding: 20px;
-            text-align: center;
-            color: white;
-            font-weight: 900;
-            font-size: 1.3em;
-            background: #0039a6;
-        }
-
-        .stats-table th {
-            background: #f8fafc;
-        }
-
-        .stats-table td {
-            height: 55px;
-        }
-
-        .stat-rank {
-            width: 40px;
-            height: 40px;
-            line-height: 40px;
-            background: #f1f5f9;
-            border-radius: 50%;
-            display: inline-block;
-            font-weight: 900;
-            color: #64748b;
-        }
-
-        .top-1 .stat-rank {
-            background: #ffd700;
-            color: #854d0e;
-        }
-
-        .top-2 .stat-rank {
-            background: #e2e8f0;
-            color: #475569;
-        }
-
-        .top-3 .stat-rank {
-            background: #ffedd5;
-            color: #9a3412;
-        }
-
-        .schedule-section {
-            margin-top: 40px;
-            color: white;
-        }
-
-        .schedule-title {
-            text-align: center;
-            margin-bottom: 30px;
-            font-size: 2em;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
+        /* Schedule Section */
         .days-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 20px;
+            gap: 25px;
         }
 
         .day-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 25px;
+            position: relative;
         }
 
         .day-header {
-            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
-            padding-bottom: 10px;
-            margin-bottom: 15px;
-            font-weight: bold;
-            font-size: 1.2em;
-            color: #ffd700;
             text-align: center;
+            font-size: 1.3em;
+            font-weight: 900;
+            color: var(--primary-gold);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(255,215,0,0.3);
         }
 
         .match-item {
-            background: rgba(255, 255, 255, 0.05);
-            margin-bottom: 10px;
-            padding: 12px;
-            border-radius: 8px;
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-            transition: transform 0.2s;
+            background: rgba(255,255,255,0.03);
+            border-radius: 15px;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
         }
 
         .match-item:hover {
+            background: rgba(255,255,255,0.08);
+            border-color: var(--primary-gold);
             transform: scale(1.02);
-            background: rgba(255, 255, 255, 0.1);
         }
 
         .match-group {
-            font-size: 0.85em;
-            color: #ffd700;
-            font-weight: bold;
+            font-size: 0.8em;
+            color: #888;
+            margin-bottom: 5px;
+            text-align: center;
         }
 
         .match-teams {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-weight: 600;
+            font-weight: 700;
+            font-size: 1.1em;
         }
 
         .vs {
-            color: #ffd700;
+            color: var(--primary-gold);
+            font-style: italic;
             font-size: 0.9em;
-            margin: 0 10px;
+            padding: 0 10px;
         }
 
-        /* Knockout Bracket Styles */
-        .knockout-section {
-            margin-top: 60px;
-            padding: 40px 20px;
-            background: rgba(0, 0, 0, 0.2);
-            border-radius: 20px;
-            overflow-x: auto;
-        }
-
-        .bracket-container {
-            display: flex;
-            justify-content: space-around;
-            min-width: 1000px;
-            gap: 20px;
-        }
-
-        .round {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            flex: 1;
-        }
-
-        .round-title {
+        .match-time {
             text-align: center;
-            color: #ffd700;
-            font-weight: bold;
-            margin-bottom: 20px;
-            font-size: 1.2em;
-            text-transform: uppercase;
-        }
-
-        .matchup {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 10px;
-            margin: 10px 0;
-            padding: 10px;
-            width: 220px;
-            position: relative;
-        }
-
-        .matchup-team {
-            display: flex;
-            justify-content: space-between;
-            padding: 5px 10px;
-            color: white;
-            font-weight: 600;
+            margin-top: 10px;
             font-size: 0.9em;
-        }
-
-        .matchup-team:first-child {
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .matchup-team span:last-child {
-            color: #ffd700;
-        }
-
-        .winner {
-            color: #22c55e !important;
-        }
-
-        /* Bracket Connectors */
-        .matchup {
-            position: relative;
-        }
-
-        /* الخطوط الخارجة من المباريات (لليمين في RTL) */
-        .round:not(:last-child) .matchup::after {
-            content: "";
-            position: absolute;
-            right: 100%;
-            top: 50%;
-            width: 20px;
-            border-top: 2px solid rgba(255, 255, 255, 0.3);
-        }
-
-        /* الخطوط الداخلة للمباريات (من اليسار في RTL) */
-        .round:not(:first-child) .matchup::before {
-            content: "";
-            position: absolute;
-            left: 100%;
-            top: 50%;
-            width: 20px;
-            border-top: 2px solid rgba(255, 255, 255, 0.3);
-        }
-
-        /* رسم الخطوط الرأسية للربط */
-        .round:nth-child(1) .matchup:nth-child(odd)::after {
-            height: 50%;
-            border-left: 2px solid rgba(255, 255, 255, 0.3);
-            top: 50%;
-        }
-
-        .round:nth-child(1) .matchup:nth-child(even)::after {
-            height: 50%;
-            border-left: 2px solid rgba(255, 255, 255, 0.3);
-            top: 0;
-        }
-
-        /* تحسين المسافات للهيكل */
-        .bracket-container {
-            padding: 20px 0;
-            gap: 40px;
+            color: var(--primary-gold);
+            font-weight: bold;
         }
 
         @media (max-width: 768px) {
-
-            .tables-grid,
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-
-            h1 {
-                font-size: 1.8em;
-            }
-
-            .year {
-                font-size: 1.8em;
-            }
-
-            th,
-            td {
-                padding: 10px 5px;
-                font-size: 0.85em;
-            }
-
-            th:first-child,
-            td:first-child {
-                padding-right: 10px;
-            }
+            .header h1 { font-size: 2.2em; }
+            .year { font-size: 2em; }
+            .tables-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -474,469 +238,194 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>جداول الترتيب</h1>
+            <h1>دورة مركز شباب أبو صالح</h1>
             <div class="year">2026</div>
         </div>
 
+        <h2 class="section-title">ترتيب المجموعات</h2>
         <div class="tables-grid">
-            <!-- المجموعة الأولى -->
+            <!-- Group 1 -->
             <div class="group-table">
                 <div class="table-header">المجموعة 1</div>
                 <table>
                     <thead>
-                        <tr>
-                            <th>الفريق</th>
-                            <th>لعب</th>
-                            <th>ف</th>
-                            <th>ت</th>
-                            <th>خ</th>
-                            <th>له</th>
-                            <th>عليه</th>
-                            <th>الفارق</th>
-                            <th>النقاط</th>
-                        </tr>
+                        <tr><th>الفريق</th><th>لعب</th><th>نقاط</th></tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td><span class="position">1</span>إسلام حسن</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td><strong>0</strong></td>
-                        </tr>
-                        <tr>
-                            <td><span class="position">2</span>عبده ربيع</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td><strong>0</strong></td>
-                        </tr>
-                        <tr>
-                            <td><span class="position">3</span>أحمد محسن</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td><strong>0</strong></td>
-                        </tr>
-                        <tr>
-                            <td><span class="position">4</span>زياد عبد الوهاب</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td><strong>0</strong></td>
-                        </tr>
+                        <tr><td><span class="position">1</span>إسلام حسن</td><td>0</td><td>0</td></tr>
+                        <tr><td><span class="position">2</span>عبده ربيع</td><td>0</td><td>0</td></tr>
+                        <tr><td><span class="position">3</span>أحمد محسن</td><td>0</td><td>0</td></tr>
+                        <tr><td><span class="position">4</span>زياد عبد الوهاب</td><td>0</td><td>0</td></tr>
                     </tbody>
                 </table>
             </div>
-
-            <!-- المجموعة الثانية -->
+            <!-- Group 2 -->
             <div class="group-table">
                 <div class="table-header">المجموعة 2</div>
                 <table>
                     <thead>
-                        <tr>
-                            <th>الفريق</th>
-                            <th>لعب</th>
-                            <th>ف</th>
-                            <th>ت</th>
-                            <th>خ</th>
-                            <th>له</th>
-                            <th>عليه</th>
-                            <th>الفارق</th>
-                            <th>النقاط</th>
-                        </tr>
+                        <tr><th>الفريق</th><th>لعب</th><th>نقاط</th></tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td><span class="position">1</span>العدلي</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td><strong>0</strong></td>
-                        </tr>
-                        <tr>
-                            <td><span class="position">2</span>عمرو عون</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td><strong>0</strong></td>
-                        </tr>
-                        <tr>
-                            <td><span class="position">3</span>محمد سامح</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td><strong>0</strong></td>
-                        </tr>
-                        <tr>
-                            <td><span class="position">4</span>محمد مصطفى قاسم</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td><strong>0</strong></td>
-                        </tr>
+                        <tr><td><span class="position">1</span>العدلي</td><td>0</td><td>0</td></tr>
+                        <tr><td><span class="position">2</span>عمرو عون</td><td>0</td><td>0</td></tr>
+                        <tr><td><span class="position">3</span>محمد سامح</td><td>0</td><td>0</td></tr>
+                        <tr><td><span class="position">4</span>محمد مصطفى قاسم</td><td>0</td><td>0</td></tr>
                     </tbody>
                 </table>
             </div>
-
-            <!-- المجموعة الثالثة -->
+            <!-- Group 3 -->
             <div class="group-table">
                 <div class="table-header">المجموعة 3</div>
                 <table>
                     <thead>
-                        <tr>
-                            <th>الفريق</th>
-                            <th>لعب</th>
-                            <th>ف</th>
-                            <th>ت</th>
-                            <th>خ</th>
-                            <th>له</th>
-                            <th>عليه</th>
-                            <th>الفارق</th>
-                            <th>النقاط</th>
-                        </tr>
+                        <tr><th>الفريق</th><th>لعب</th><th>نقاط</th></tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td><span class="position">1</span>محمد سالم</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td><strong>0</strong></td>
-                        </tr>
-                        <tr>
-                            <td><span class="position">2</span>يوسف التهامي</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td><strong>0</strong></td>
-                        </tr>
-                        <tr>
-                            <td><span class="position">3</span>إبراهيم علاء</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td><strong>0</strong></td>
-                        </tr>
-                        <tr>
-                            <td><span class="position">4</span>أحمد عماد</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td><strong>0</strong></td>
-                        </tr>
+                        <tr><td><span class="position">1</span>محمد سالم</td><td>0</td><td>0</td></tr>
+                        <tr><td><span class="position">2</span>يوسف التهامي</td><td>0</td><td>0</td></tr>
+                        <tr><td><span class="position">3</span>إبراهيم علاء</td><td>0</td><td>0</td></tr>
+                        <tr><td><span class="position">4</span>أحمد عماد</td><td>0</td><td>0</td></tr>
                     </tbody>
                 </table>
             </div>
-
-            <!-- المجموعة الرابعة -->
+            <!-- Group 4 -->
             <div class="group-table">
                 <div class="table-header">المجموعة 4</div>
                 <table>
                     <thead>
-                        <tr>
-                            <th>الفريق</th>
-                            <th>لعب</th>
-                            <th>ف</th>
-                            <th>ت</th>
-                            <th>خ</th>
-                            <th>له</th>
-                            <th>عليه</th>
-                            <th>الفارق</th>
-                            <th>النقاط</th>
-                        </tr>
+                        <tr><th>الفريق</th><th>لعب</th><th>نقاط</th></tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td><span class="position">1</span>أشرف شوقي</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td><strong>0</strong></td>
-                        </tr>
-                        <tr>
-                            <td><span class="position">2</span>وليد ممدوح</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td><strong>0</strong></td>
-                        </tr>
-                        <tr>
-                            <td><span class="position">3</span>أنطونياديس</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td><strong>0</strong></td>
-                        </tr>
-                        <tr>
-                            <td><span class="position">4</span>روزة</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td><strong>0</strong></td>
-                        </tr>
+                        <tr><td><span class="position">1</span>أشرف شوقي</td><td>0</td><td>0</td></tr>
+                        <tr><td><span class="position">2</span>وليد ممدوح</td><td>0</td><td>0</td></tr>
+                        <tr><td><span class="position">3</span>أنطونياديس</td><td>0</td><td>0</td></tr>
+                        <tr><td><span class="position">4</span>روزة</td><td>0</td><td>0</td></tr>
                     </tbody>
                 </table>
             </div>
-
-            <!-- المجموعة الخامسة -->
+            <!-- Group 5 -->
             <div class="group-table">
                 <div class="table-header">المجموعة 5</div>
                 <table>
                     <thead>
-                        <tr>
-                            <th>الفريق</th>
-                            <th>لعب</th>
-                            <th>ف</th>
-                            <th>ت</th>
-                            <th>خ</th>
-                            <th>له</th>
-                            <th>عليه</th>
-                            <th>الفارق</th>
-                            <th>النقاط</th>
-                        </tr>
+                        <tr><th>الفريق</th><th>لعب</th><th>نقاط</th></tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td><span class="position">1</span>أحمد منفي</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td><strong>0</strong></td>
-                        </tr>
-                        <tr>
-                            <td><span class="position">2</span>الوراقية</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td><strong>0</strong></td>
-                        </tr>
-                        <tr>
-                            <td><span class="position">3</span>محمد رجب</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td><strong>0</strong></td>
-                        </tr>
-                        <tr>
-                            <td><span class="position">4</span>معاذ شريف</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td><strong>0</strong></td>
-                        </tr>
+                        <tr><td><span class="position">1</span>أحمد منفي</td><td>0</td><td>0</td></tr>
+                        <tr><td><span class="position">2</span>الوراقية</td><td>0</td><td>0</td></tr>
+                        <tr><td><span class="position">3</span>محمد رجب</td><td>0</td><td>0</td></tr>
+                        <tr><td><span class="position">4</span>معاذ شريف</td><td>0</td><td>0</td></tr>
                     </tbody>
                 </table>
             </div>
-
-            <!-- المجموعة السادسة -->
+            <!-- Group 6 -->
             <div class="group-table">
                 <div class="table-header">المجموعة 6</div>
                 <table>
                     <thead>
-                        <tr>
-                            <th>الفريق</th>
-                            <th>لعب</th>
-                            <th>ف</th>
-                            <th>ت</th>
-                            <th>خ</th>
-                            <th>له</th>
-                            <th>عليه</th>
-                            <th>الفارق</th>
-                            <th>النقاط</th>
-                        </tr>
+                        <tr><th>الفريق</th><th>لعب</th><th>نقاط</th></tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td><span class="position">1</span>نسور البيضا</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td><strong>0</strong></td>
-                        </tr>
-                        <tr>
-                            <td><span class="position">2</span>منتخب البيضا</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td><strong>0</strong></td>
-                        </tr>
-                        <tr>
-                            <td><span class="position">3</span> القصر </td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td><strong>0</strong></td>
-                        </tr>
-                        <tr>
-                            <td><span class="position">4</span>علي لمنونة</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td><strong>0</strong></td>
-                        </tr>
+                        <tr><td><span class="position">1</span>نسور البيضا</td><td>0</td><td>0</td></tr>
+                        <tr><td><span class="position">2</span>منتخب البيضا</td><td>0</td><td>0</td></tr>
+                        <tr><td><span class="position">3</span>القصر</td><td>0</td><td>0</td></tr>
+                        <tr><td><span class="position">4</span>علي لمونة</td><td>0</td><td>0</td></tr>
                     </tbody>
                 </table>
             </div>
         </div>
 
-        <div class="schedule-section">
-            <h2 class="schedule-title">جدول المباريات</h2>
-            <div class="days-grid">
-                <div class="day-card">
-                    <div class="day-header">السبت: 31-01-2026</div>
-                    <div class="match-item">
-                        <div class="match-group">المجموعة 6</div>
-                        <div class="match-teams">
-                            <span style=""> القصر</span> 
-                            <span class="vs">(-) VS (-)</span> 
-                            <span style="font-weight: bold; color: #ffd700;">علي لمنونة</span>
-                        </div>
-                        <div class="match-group" style="text-align: center; color: #ffd700; font-size: 0.8em; margin-top: 5px;">07:00 PM</div>
-                    </div>
+        <h2 class="section-title">جدول المباريات (الشفافية والمساواة)</h2>
+        <div class="days-grid">
+                            <div class="day-card">
+                    <div class="day-header">الأربعاء: 28-01-2026</div>
                     <div class="match-item">
                         <div class="match-group">المجموعة 2</div>
                         <div class="match-teams">
-                            <span style="">العدلي</span> 
-                            <span class="vs">(-) VS (-)</span> 
-                            <span style="">عمرو عون</span>
+                            <span>العدلي</span> 
+                            <span class="vs">VS</span> 
+                            <span>عمرو عون</span>
                         </div>
-                        <div class="match-group" style="text-align: center; color: #ffd700; font-size: 0.8em; margin-top: 5px;">07:40 PM</div>
+                        <div class="match-time">07:00 PM</div>
                     </div>
                     <div class="match-item">
                         <div class="match-group">المجموعة 3</div>
                         <div class="match-teams">
-                            <span style="">محمد سالم</span> 
-                            <span class="vs">(-) VS (-)</span> 
-                            <span style="">يوسف التهامي</span>
+                            <span>محمد سالم</span> 
+                            <span class="vs">VS</span> 
+                            <span>أحمد عماد</span>
                         </div>
-                        <div class="match-group" style="text-align: center; color: #ffd700; font-size: 0.8em; margin-top: 5px;">08:20 PM</div>
+                        <div class="match-time">07:40 PM</div>
+                    </div>
+                    <div class="match-item">
+                        <div class="match-group">المجموعة 1</div>
+                        <div class="match-teams">
+                            <span>إسلام حسن</span> 
+                            <span class="vs">VS</span> 
+                            <span>عبده ربيع</span>
+                        </div>
+                        <div class="match-time">08:20 PM</div>
+                    </div>
+                </div>
+                <div class="day-card">
+                    <div class="day-header">السبت: 31-01-2026</div>
+                    <div class="match-item">
+                        <div class="match-group">المجموعة 4</div>
+                        <div class="match-teams">
+                            <span>أشرف شوقي</span> 
+                            <span class="vs">VS</span> 
+                            <span>وليد ممدوح</span>
+                        </div>
+                        <div class="match-time">07:00 PM</div>
+                    </div>
+                    <div class="match-item">
+                        <div class="match-group">المجموعة 6</div>
+                        <div class="match-teams">
+                            <span>نسور البيضا</span> 
+                            <span class="vs">VS</span> 
+                            <span>منتخب البيضا</span>
+                        </div>
+                        <div class="match-time">07:40 PM</div>
+                    </div>
+                    <div class="match-item">
+                        <div class="match-group">المجموعة 5</div>
+                        <div class="match-teams">
+                            <span>الوراقية</span> 
+                            <span class="vs">VS</span> 
+                            <span>محمد رجب</span>
+                        </div>
+                        <div class="match-time">08:20 PM</div>
                     </div>
                 </div>
                 <div class="day-card">
                     <div class="day-header">الأحد: 01-02-2026</div>
                     <div class="match-item">
-                        <div class="match-group">المجموعة 4</div>
+                        <div class="match-group">المجموعة 2</div>
                         <div class="match-teams">
-                            <span style="">أشرف شوقي</span> 
-                            <span class="vs">(-) VS (-)</span> 
-                            <span style="">وليد ممدوح</span>
+                            <span>محمد سامح</span> 
+                            <span class="vs">VS</span> 
+                            <span>محمد مصطفى قاسم</span>
                         </div>
-                        <div class="match-group" style="text-align: center; color: #ffd700; font-size: 0.8em; margin-top: 5px;">08:00 PM</div>
+                        <div class="match-time">08:00 PM</div>
                     </div>
                     <div class="match-item">
-                        <div class="match-group">المجموعة 5</div>
+                        <div class="match-group">المجموعة 3</div>
                         <div class="match-teams">
-                            <span style="">محمد رجب</span> 
-                            <span class="vs">(-) VS (-)</span> 
-                            <span style="">معاذ شريف</span>
+                            <span>يوسف التهامي</span> 
+                            <span class="vs">VS</span> 
+                            <span>إبراهيم علاء</span>
                         </div>
-                        <div class="match-group" style="text-align: center; color: #ffd700; font-size: 0.8em; margin-top: 5px;">08:40 PM</div>
+                        <div class="match-time">08:40 PM</div>
                     </div>
                     <div class="match-item">
-                        <div class="match-group">المجموعة 6</div>
+                        <div class="match-group">المجموعة 1</div>
                         <div class="match-teams">
-                            <span style="">نسور البيضا</span> 
-                            <span class="vs">(-) VS (-)</span> 
-                            <span style="">منتخب البيضا</span>
+                            <span>أحمد محسن</span> 
+                            <span class="vs">VS</span> 
+                            <span>زياد عبد الوهاب</span>
                         </div>
-                        <div class="match-group" style="text-align: center; color: #ffd700; font-size: 0.8em; margin-top: 5px;">09:20 PM</div>
+                        <div class="match-time">09:20 PM</div>
                     </div>
                 </div>
                 <div class="day-card">
@@ -944,305 +433,273 @@
                     <div class="match-item">
                         <div class="match-group">المجموعة 1</div>
                         <div class="match-teams">
-                            <span style="font-weight: bold; color: #ffd700;">إسلام حسن</span> 
-                            <span class="vs">(-) VS (-)</span> 
-                            <span style="">عبده ربيع</span>
+                            <span>إسلام حسن</span> 
+                            <span class="vs">VS</span> 
+                            <span>أحمد محسن</span>
                         </div>
-                        <div class="match-group" style="text-align: center; color: #ffd700; font-size: 0.8em; margin-top: 5px;">07:00 PM</div>
+                        <div class="match-time">07:00 PM</div>
                     </div>
                     <div class="match-item">
-                        <div class="match-group">المجموعة 2</div>
+                        <div class="match-group">المجموعة 4</div>
                         <div class="match-teams">
-                            <span style="">محمد سامح</span> 
-                            <span class="vs">(-) VS (-)</span> 
-                            <span style="">محمد مصطفى قاسم</span>
+                            <span>أنطونياديس</span> 
+                            <span class="vs">VS</span> 
+                            <span>روزة</span>
                         </div>
-                        <div class="match-group" style="text-align: center; color: #ffd700; font-size: 0.8em; margin-top: 5px;">07:40 PM</div>
+                        <div class="match-time">07:40 PM</div>
                     </div>
                     <div class="match-item">
-                        <div class="match-group">المجموعة 3</div>
+                        <div class="match-group">المجموعة 6</div>
                         <div class="match-teams">
-                            <span style="">إبراهيم علاء</span> 
-                            <span class="vs">(-) VS (-)</span> 
-                            <span style="">أحمد عماد</span>
+                            <span> القصر</span> 
+                            <span class="vs">VS</span> 
+                            <span>علي لمونة</span>
                         </div>
-                        <div class="match-group" style="text-align: center; color: #ffd700; font-size: 0.8em; margin-top: 5px;">08:20 PM</div>
+                        <div class="match-time">08:20 PM</div>
                     </div>
                 </div>
                 <div class="day-card">
                     <div class="day-header">الثلاثاء: 03-02-2026</div>
                     <div class="match-item">
-                        <div class="match-group">المجموعة 4</div>
-                        <div class="match-teams">
-                            <span style="">أنطونياديس</span> 
-                            <span class="vs">(-) VS (-)</span> 
-                            <span style="">روزة</span>
-                        </div>
-                        <div class="match-group" style="text-align: center; color: #ffd700; font-size: 0.8em; margin-top: 5px;">07:00 PM</div>
-                    </div>
-                    <div class="match-item">
                         <div class="match-group">المجموعة 5</div>
                         <div class="match-teams">
-                            <span style="font-weight: bold; color: #ffd700;">أحمد منفي</span> 
-                            <span class="vs">(-) VS (-)</span> 
-                            <span style="">الوراقية</span>
+                            <span>أحمد منفي</span> 
+                            <span class="vs">VS</span> 
+                            <span>معاذ شريف</span>
                         </div>
-                        <div class="match-group" style="text-align: center; color: #ffd700; font-size: 0.8em; margin-top: 5px;">07:40 PM</div>
+                        <div class="match-time">07:00 PM</div>
                     </div>
                     <div class="match-item">
-                        <div class="match-group">المجموعة 1</div>
+                        <div class="match-group">المجموعة 2</div>
                         <div class="match-teams">
-                            <span style="">أحمد محسن</span> 
-                            <span class="vs">(-) VS (-)</span> 
-                            <span style="">زياد عبد الوهاب</span>
+                            <span>العدلي</span> 
+                            <span class="vs">VS</span> 
+                            <span>محمد سامح</span>
                         </div>
-                        <div class="match-group" style="text-align: center; color: #ffd700; font-size: 0.8em; margin-top: 5px;">08:20 PM</div>
+                        <div class="match-time">07:40 PM</div>
+                    </div>
+                    <div class="match-item">
+                        <div class="match-group">المجموعة 3</div>
+                        <div class="match-teams">
+                            <span>محمد سالم</span> 
+                            <span class="vs">VS</span> 
+                            <span>إبراهيم علاء</span>
+                        </div>
+                        <div class="match-time">08:20 PM</div>
                     </div>
                 </div>
                 <div class="day-card">
                     <div class="day-header">الأربعاء: 04-02-2026</div>
                     <div class="match-item">
-                        <div class="match-group">المجموعة 1</div>
+                        <div class="match-group">المجموعة 4</div>
                         <div class="match-teams">
-                            <span style="font-weight: bold; color: #ffd700;">إسلام حسن</span> 
-                            <span class="vs">(-) VS (-)</span> 
-                            <span style="">أحمد محسن</span>
+                            <span>أشرف شوقي</span> 
+                            <span class="vs">VS</span> 
+                            <span>أنطونياديس</span>
                         </div>
-                        <div class="match-group" style="text-align: center; color: #ffd700; font-size: 0.8em; margin-top: 5px;">07:00 PM</div>
+                        <div class="match-time">07:00 PM</div>
                     </div>
                     <div class="match-item">
-                        <div class="match-group">المجموعة 2</div>
+                        <div class="match-group">المجموعة 6</div>
                         <div class="match-teams">
-                            <span style="">العدلي</span> 
-                            <span class="vs">(-) VS (-)</span> 
-                            <span style="">محمد سامح</span>
+                            <span>نسور البيضا</span> 
+                            <span class="vs">VS</span> 
+                            <span> القصر</span>
                         </div>
-                        <div class="match-group" style="text-align: center; color: #ffd700; font-size: 0.8em; margin-top: 5px;">07:40 PM</div>
+                        <div class="match-time">07:40 PM</div>
                     </div>
                     <div class="match-item">
-                        <div class="match-group">المجموعة 3</div>
+                        <div class="match-group">المجموعة 5</div>
                         <div class="match-teams">
-                            <span style="">محمد سالم</span> 
-                            <span class="vs">(-) VS (-)</span> 
-                            <span style="">إبراهيم علاء</span>
+                            <span>الوراقية</span> 
+                            <span class="vs">VS</span> 
+                            <span>معاذ شريف</span>
                         </div>
-                        <div class="match-group" style="text-align: center; color: #ffd700; font-size: 0.8em; margin-top: 5px;">08:20 PM</div>
+                        <div class="match-time">08:20 PM</div>
                     </div>
                 </div>
                 <div class="day-card">
                     <div class="day-header">السبت: 07-02-2026</div>
                     <div class="match-item">
-                        <div class="match-group">المجموعة 5</div>
+                        <div class="match-group">المجموعة 1</div>
                         <div class="match-teams">
-                            <span style="">الوراقية</span> 
-                            <span class="vs">(-) VS (-)</span> 
-                            <span style="">معاذ شريف</span>
+                            <span>عبده ربيع</span> 
+                            <span class="vs">VS</span> 
+                            <span>زياد عبد الوهاب</span>
                         </div>
-                        <div class="match-group" style="text-align: center; color: #ffd700; font-size: 0.8em; margin-top: 5px;">07:00 PM</div>
+                        <div class="match-time">07:00 PM</div>
                     </div>
                     <div class="match-item">
-                        <div class="match-group">المجموعة 5</div>
+                        <div class="match-group">المجموعة 2</div>
                         <div class="match-teams">
-                            <span style="font-weight: bold; color: #ffd700;">أحمد منفي</span> 
-                            <span class="vs">(-) VS (-)</span> 
-                            <span style="">محمد رجب</span>
+                            <span>عمرو عون</span> 
+                            <span class="vs">VS</span> 
+                            <span>محمد مصطفى قاسم</span>
                         </div>
-                        <div class="match-group" style="text-align: center; color: #ffd700; font-size: 0.8em; margin-top: 5px;">07:40 PM</div>
+                        <div class="match-time">07:40 PM</div>
                     </div>
                     <div class="match-item">
-                        <div class="match-group">المجموعة 4</div>
+                        <div class="match-group">المجموعة 3</div>
                         <div class="match-teams">
-                            <span style="">أشرف شوقي</span> 
-                            <span class="vs">(-) VS (-)</span> 
-                            <span style="">أنطونياديس</span>
+                            <span>يوسف التهامي</span> 
+                            <span class="vs">VS</span> 
+                            <span>أحمد عماد</span>
                         </div>
-                        <div class="match-group" style="text-align: center; color: #ffd700; font-size: 0.8em; margin-top: 5px;">08:20 PM</div>
+                        <div class="match-time">08:20 PM</div>
                     </div>
                 </div>
                 <div class="day-card">
                     <div class="day-header">الأحد: 08-02-2026</div>
                     <div class="match-item">
-                        <div class="match-group">المجموعة 1</div>
+                        <div class="match-group">المجموعة 4</div>
                         <div class="match-teams">
-                            <span style="">عبده ربيع</span> 
-                            <span class="vs">(-) VS (-)</span> 
-                            <span style="">زياد عبد الوهاب</span>
+                            <span>وليد ممدوح</span> 
+                            <span class="vs">VS</span> 
+                            <span>روزة</span>
                         </div>
-                        <div class="match-group" style="text-align: center; color: #ffd700; font-size: 0.8em; margin-top: 5px;">08:00 PM</div>
+                        <div class="match-time">08:00 PM</div>
                     </div>
                     <div class="match-item">
-                        <div class="match-group">المجموعة 2</div>
+                        <div class="match-group">المجموعة 6</div>
                         <div class="match-teams">
-                            <span style="">عمرو عون</span> 
-                            <span class="vs">(-) VS (-)</span> 
-                            <span style="">محمد مصطفى قاسم</span>
+                            <span>منتخب البيضا</span> 
+                            <span class="vs">VS</span> 
+                            <span>علي لمونة</span>
                         </div>
-                        <div class="match-group" style="text-align: center; color: #ffd700; font-size: 0.8em; margin-top: 5px;">08:40 PM</div>
+                        <div class="match-time">08:40 PM</div>
                     </div>
                     <div class="match-item">
-                        <div class="match-group">المجموعة 3</div>
+                        <div class="match-group">المجموعة 5</div>
                         <div class="match-teams">
-                            <span style="">يوسف التهامي</span> 
-                            <span class="vs">(-) VS (-)</span> 
-                            <span style="">أحمد عماد</span>
+                            <span>محمد رجب</span> 
+                            <span class="vs">VS</span> 
+                            <span>معاذ شريف</span>
                         </div>
-                        <div class="match-group" style="text-align: center; color: #ffd700; font-size: 0.8em; margin-top: 5px;">09:20 PM</div>
+                        <div class="match-time">09:20 PM</div>
                     </div>
                 </div>
                 <div class="day-card">
                     <div class="day-header">الاثنين: 09-02-2026</div>
                     <div class="match-item">
-                        <div class="match-group">المجموعة 4</div>
+                        <div class="match-group">المجموعة 1</div>
                         <div class="match-teams">
-                            <span style="">وليد ممدوح</span> 
-                            <span class="vs">(-) VS (-)</span> 
-                            <span style="">روزة</span>
+                            <span>إسلام حسن</span> 
+                            <span class="vs">VS</span> 
+                            <span>زياد عبد الوهاب</span>
                         </div>
-                        <div class="match-group" style="text-align: center; color: #ffd700; font-size: 0.8em; margin-top: 5px;">07:00 PM</div>
+                        <div class="match-time">07:00 PM</div>
                     </div>
                     <div class="match-item">
-                        <div class="match-group">المجموعة 6</div>
+                        <div class="match-group">المجموعة 2</div>
                         <div class="match-teams">
-                            <span style="">نسور البيضا</span> 
-                            <span class="vs">(-) VS (-)</span> 
-                            <span style=""> القصر</span>
+                            <span>العدلي</span> 
+                            <span class="vs">VS</span> 
+                            <span>محمد مصطفى قاسم</span>
                         </div>
-                        <div class="match-group" style="text-align: center; color: #ffd700; font-size: 0.8em; margin-top: 5px;">07:40 PM</div>
+                        <div class="match-time">07:40 PM</div>
                     </div>
                     <div class="match-item">
-                        <div class="match-group">المجموعة 6</div>
+                        <div class="match-group">المجموعة 3</div>
                         <div class="match-teams">
-                            <span style="">منتخب البيضا</span> 
-                            <span class="vs">(-) VS (-)</span> 
-                            <span style="font-weight: bold; color: #ffd700;">علي لمنونة</span>
+                            <span>محمد سالم</span> 
+                            <span class="vs">VS</span> 
+                            <span>أحمد عماد</span>
                         </div>
-                        <div class="match-group" style="text-align: center; color: #ffd700; font-size: 0.8em; margin-top: 5px;">08:20 PM</div>
+                        <div class="match-time">08:20 PM</div>
                     </div>
                 </div>
                 <div class="day-card">
                     <div class="day-header">الثلاثاء: 10-02-2026</div>
                     <div class="match-item">
-                        <div class="match-group">المجموعة 1</div>
+                        <div class="match-group">المجموعة 5</div>
                         <div class="match-teams">
-                            <span style="font-weight: bold; color: #ffd700;">إسلام حسن</span> 
-                            <span class="vs">(-) VS (-)</span> 
-                            <span style="">زياد عبد الوهاب</span>
+                            <span>أحمد منفي</span> 
+                            <span class="vs">VS</span> 
+                            <span>محمد رجب</span>
                         </div>
-                        <div class="match-group" style="text-align: center; color: #ffd700; font-size: 0.8em; margin-top: 5px;">07:00 PM</div>
+                        <div class="match-time">07:00 PM</div>
                     </div>
                     <div class="match-item">
-                        <div class="match-group">المجموعة 2</div>
+                        <div class="match-group">المجموعة 4</div>
                         <div class="match-teams">
-                            <span style="">العدلي</span> 
-                            <span class="vs">(-) VS (-)</span> 
-                            <span style="">محمد مصطفى قاسم</span>
+                            <span>أشرف شوقي</span> 
+                            <span class="vs">VS</span> 
+                            <span>روزة</span>
                         </div>
-                        <div class="match-group" style="text-align: center; color: #ffd700; font-size: 0.8em; margin-top: 5px;">07:40 PM</div>
+                        <div class="match-time">07:40 PM</div>
                     </div>
                     <div class="match-item">
-                        <div class="match-group">المجموعة 3</div>
+                        <div class="match-group">المجموعة 6</div>
                         <div class="match-teams">
-                            <span style="">محمد سالم</span> 
-                            <span class="vs">(-) VS (-)</span> 
-                            <span style="">أحمد عماد</span>
+                            <span>نسور البيضا</span> 
+                            <span class="vs">VS</span> 
+                            <span>علي لمونة</span>
                         </div>
-                        <div class="match-group" style="text-align: center; color: #ffd700; font-size: 0.8em; margin-top: 5px;">08:20 PM</div>
+                        <div class="match-time">08:20 PM</div>
                     </div>
                 </div>
                 <div class="day-card">
                     <div class="day-header">الأربعاء: 11-02-2026</div>
                     <div class="match-item">
-                        <div class="match-group">المجموعة 4</div>
+                        <div class="match-group">المجموعة 1</div>
                         <div class="match-teams">
-                            <span style="">أشرف شوقي</span> 
-                            <span class="vs">(-) VS (-)</span> 
-                            <span style="">روزة</span>
+                            <span>عبده ربيع</span> 
+                            <span class="vs">VS</span> 
+                            <span>أحمد محسن</span>
                         </div>
-                        <div class="match-group" style="text-align: center; color: #ffd700; font-size: 0.8em; margin-top: 5px;">07:00 PM</div>
+                        <div class="match-time">07:00 PM</div>
                     </div>
                     <div class="match-item">
-                        <div class="match-group">المجموعة 5</div>
+                        <div class="match-group">المجموعة 2</div>
                         <div class="match-teams">
-                            <span style="font-weight: bold; color: #ffd700;">أحمد منفي</span> 
-                            <span class="vs">(-) VS (-)</span> 
-                            <span style="">معاذ شريف</span>
+                            <span>عمرو عون</span> 
+                            <span class="vs">VS</span> 
+                            <span>محمد سامح</span>
                         </div>
-                        <div class="match-group" style="text-align: center; color: #ffd700; font-size: 0.8em; margin-top: 5px;">07:40 PM</div>
+                        <div class="match-time">07:40 PM</div>
                     </div>
                     <div class="match-item">
-                        <div class="match-group">المجموعة 6</div>
+                        <div class="match-group">المجموعة 3</div>
                         <div class="match-teams">
-                            <span style="">نسور البيضا</span> 
-                            <span class="vs">(-) VS (-)</span> 
-                            <span style="font-weight: bold; color: #ffd700;">علي لمنونة</span>
+                            <span>يوسف التهامي</span> 
+                            <span class="vs">VS</span> 
+                            <span>إبراهيم علاء</span>
                         </div>
-                        <div class="match-group" style="text-align: center; color: #ffd700; font-size: 0.8em; margin-top: 5px;">08:20 PM</div>
+                        <div class="match-time">08:20 PM</div>
                     </div>
                 </div>
                 <div class="day-card">
                     <div class="day-header">السبت: 14-02-2026</div>
                     <div class="match-item">
-                        <div class="match-group">المجموعة 1</div>
-                        <div class="match-teams">
-                            <span style="">عبده ربيع</span> 
-                            <span class="vs">(-) VS (-)</span> 
-                            <span style="">أحمد محسن</span>
-                        </div>
-                        <div class="match-group" style="text-align: center; color: #ffd700; font-size: 0.8em; margin-top: 5px;">07:00 PM</div>
-                    </div>
-                    <div class="match-item">
-                        <div class="match-group">المجموعة 2</div>
-                        <div class="match-teams">
-                            <span style="">عمرو عون</span> 
-                            <span class="vs">(-) VS (-)</span> 
-                            <span style="">محمد سامح</span>
-                        </div>
-                        <div class="match-group" style="text-align: center; color: #ffd700; font-size: 0.8em; margin-top: 5px;">07:40 PM</div>
-                    </div>
-                    <div class="match-item">
-                        <div class="match-group">المجموعة 3</div>
-                        <div class="match-teams">
-                            <span style="">يوسف التهامي</span> 
-                            <span class="vs">(-) VS (-)</span> 
-                            <span style="">إبراهيم علاء</span>
-                        </div>
-                        <div class="match-group" style="text-align: center; color: #ffd700; font-size: 0.8em; margin-top: 5px;">08:20 PM</div>
-                    </div>
-                </div>
-                <div class="day-card">
-                    <div class="day-header">الأحد: 15-02-2026</div>
-                    <div class="match-item">
                         <div class="match-group">المجموعة 4</div>
                         <div class="match-teams">
-                            <span style="">وليد ممدوح</span> 
-                            <span class="vs">(-) VS (-)</span> 
-                            <span style="">أنطونياديس</span>
+                            <span>وليد ممدوح</span> 
+                            <span class="vs">VS</span> 
+                            <span>أنطونياديس</span>
                         </div>
-                        <div class="match-group" style="text-align: center; color: #ffd700; font-size: 0.8em; margin-top: 5px;">08:00 PM</div>
-                    </div>
-                    <div class="match-item">
-                        <div class="match-group">المجموعة 5</div>
-                        <div class="match-teams">
-                            <span style="">الوراقية</span> 
-                            <span class="vs">(-) VS (-)</span> 
-                            <span style="">محمد رجب</span>
-                        </div>
-                        <div class="match-group" style="text-align: center; color: #ffd700; font-size: 0.8em; margin-top: 5px;">08:40 PM</div>
+                        <div class="match-time">07:00 PM</div>
                     </div>
                     <div class="match-item">
                         <div class="match-group">المجموعة 6</div>
                         <div class="match-teams">
-                            <span style="">منتخب البيضا</span> 
-                            <span class="vs">(-) VS (-)</span> 
-                            <span style=""> القصر</span>
+                            <span>منتخب البيضا</span> 
+                            <span class="vs">VS</span> 
+                            <span> القصر</span>
                         </div>
-                        <div class="match-group" style="text-align: center; color: #ffd700; font-size: 0.8em; margin-top: 5px;">09:20 PM</div>
+                        <div class="match-time">07:40 PM</div>
+                    </div>
+                    <div class="match-item">
+                        <div class="match-group">المجموعة 5</div>
+                        <div class="match-teams">
+                            <span>أحمد منفي</span> 
+                            <span class="vs">VS</span> 
+                            <span>الوراقية</span>
+                        </div>
+                        <div class="match-time">08:20 PM</div>
                     </div>
                 </div>
-            </div>
+
+        </div>
     </div>
 </body>
-
 </html>
-
-
