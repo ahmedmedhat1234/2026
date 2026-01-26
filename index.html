@@ -271,6 +271,45 @@
             margin-bottom: 50px;
         }
 
+        .organizer-section {
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .organizer-section:hover {
+            border-color: var(--primary-gold);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.1);
+        }
+
+        .organizer-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid var(--primary-gold);
+            margin-bottom: 15px;
+            object-fit: cover;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+        }
+
+        .organizer-name {
+            font-size: 1.8em;
+            font-weight: 900;
+            color: var(--primary-gold);
+            margin-bottom: 5px;
+        }
+
+        .organizer-title {
+            font-size: 1.1em;
+            color: #ccc;
+            font-weight: 700;
+        }
+
         .stat-card {
             background: var(--glass-bg);
             backdrop-filter: blur(15px);
@@ -351,25 +390,26 @@
             <div class="year">2026</div>
         </div>
 
+        <h2 class="section-title">👤 المسؤول عن التنظيم والموقع</h2>
+        <div class="organizer-section">
+            <img src="1.jpg" alt="أحمد مدحت علوش" class="organizer-img">
+            <div class="organizer-name">أحمد مدحت علوش</div>
+            <div class="organizer-title">المسؤول عن إنشاء الموقع والتنظيم</div>
+        </div>
+
         <h2 class="section-title">🏆 الإحصائيات الفردية</h2>
         <div class="stats-grid">
             <div class="stat-card">
-                <div class="table-header">⚽ الهدافين</div>
-                <div class="stat-item"><span class="stat-name">_</span><span class="stat-value">0</span></div>
-                <div class="stat-item"><span class="stat-name">_</span><span class="stat-value">0</span></div>
-                <div class="stat-item"><span class="stat-name">_</span><span class="stat-value">0</span></div>
-            </div>
-            <div class="stat-card">
-                <div class="table-header">🎯 صناع اللعب</div>
-                <div class="stat-item"><span class="stat-name">_</span><span class="stat-value">0</span></div>
-                <div class="stat-item"><span class="stat-name">_</span><span class="stat-value">0</span></div>
-                <div class="stat-item"><span class="stat-name">_</span><span class="stat-value">0</span></div>
+                <div class="table-header">⚽ أفضل هداف</div>
+                <div class="stat-item"><span class="stat-name"><span class="position">1</span> _</span><span class="stat-value">0</span></div>
+                <div class="stat-item"><span class="stat-name"><span class="position">2</span> _</span><span class="stat-value">0</span></div>
+                <div class="stat-item"><span class="stat-name"><span class="position">3</span> _</span><span class="stat-value">0</span></div>
             </div>
             <div class="stat-card">
                 <div class="table-header">🧤 نظافة الشباك</div>
-                <div class="stat-item"><span class="stat-name">_</span><span class="stat-value">0</span></div>
-                <div class="stat-item"><span class="stat-name">_</span><span class="stat-value">0</span></div>
-                <div class="stat-item"><span class="stat-name">_</span><span class="stat-value">0</span></div>
+                <div class="stat-item"><span class="stat-name"><span class="position">1</span> _</span><span class="stat-value">0</span></div>
+                <div class="stat-item"><span class="stat-name"><span class="position">2</span> _</span><span class="stat-value">0</span></div>
+                <div class="stat-item"><span class="stat-name"><span class="position">3</span> _</span><span class="stat-value">0</span></div>
             </div>
         </div>
 
