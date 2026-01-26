@@ -164,42 +164,42 @@
 
         .days-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
         }
 
         .day-card {
             background: var(--glass-bg);
             backdrop-filter: blur(15px);
             border: 1px solid var(--glass-border);
-            border-radius: 20px;
-            padding: 25px;
+            border-radius: 12px;
+            padding: 12px;
             position: relative;
         }
 
         .day-header {
             text-align: center;
-            font-size: 1.3em;
+            font-size: 0.75em;
             font-weight: 900;
             color: var(--primary-gold);
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid rgba(255,215,0,0.3);
+            margin-bottom: 10px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid rgba(255,215,0,0.3);
         }
 
         .day-label {
             display: block;
-            font-size: 0.8em;
+            font-size: 0.65em;
             color: #fff;
             opacity: 0.7;
-            margin-bottom: 5px;
+            margin-bottom: 3px;
         }
 
         .match-item {
             background: rgba(255,255,255,0.03);
-            border-radius: 12px;
-            padding: 10px;
-            margin-bottom: 10px;
+            border-radius: 8px;
+            padding: 6px;
+            margin-bottom: 6px;
             border: 1px solid transparent;
             transition: all 0.3s ease;
         }
@@ -211,9 +211,9 @@
         }
 
         .match-group {
-            font-size: 0.75em;
+            font-size: 0.6em;
             color: #888;
-            margin-bottom: 3px;
+            margin-bottom: 2px;
             text-align: center;
         }
 
@@ -222,42 +222,42 @@
             justify-content: space-between;
             align-items: center;
             font-weight: 700;
-            font-size: 0.95em;
+            font-size: 0.7em;
         }
 
         .vs {
             color: var(--primary-gold);
             font-style: italic;
-            font-size: 0.9em;
-            padding: 0 10px;
+            font-size: 0.7em;
+            padding: 0 5px;
         }
 
         .match-result {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 8px;
-            margin-top: 8px;
+            gap: 4px;
+            margin-top: 4px;
         }
 
         .score-box {
-            width: 35px;
-            height: 35px;
+            width: 20px;
+            height: 20px;
             background: rgba(255,255,255,0.1);
             border: 1px solid var(--glass-border);
-            border-radius: 6px;
+            border-radius: 4px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 900;
             color: var(--primary-gold);
-            font-size: 1em;
+            font-size: 0.65em;
         }
 
         .match-time {
             text-align: center;
-            margin-top: 8px;
-            font-size: 0.8em;
+            margin-top: 4px;
+            font-size: 0.65em;
             color: var(--primary-gold);
             font-weight: bold;
             opacity: 0.8;
@@ -484,23 +484,9 @@
         <div class="days-grid">
     
             <div class="day-card">
-                <span class="day-label">اليوم الأول</span>
-                <div class="day-header">السبت: 25-01-2026</div>
+                <span class="day-label">اليوم 1</span>
+                <div class="day-header">الأربعاء: 28-01-2026</div>
         
-                <div class="match-item">
-                    <div class="match-group">المجموعة 1</div>
-                    <div class="match-teams">
-                        <span>إسلام حسن</span> 
-                        <span class="vs">VS</span> 
-                        <span>عبده ربيع</span>
-                    </div>
-                    <div class="match-result">
-                        <div class="score-box">_</div>
-                        <div class="score-box">_</div>
-                    </div>
-                    <div class="match-time">07:00 PM</div>
-                </div>
-            
                 <div class="match-item">
                     <div class="match-group">المجموعة 2</div>
                     <div class="match-teams">
@@ -512,7 +498,7 @@
                         <div class="score-box">_</div>
                         <div class="score-box">_</div>
                     </div>
-                    <div class="match-time">07:40 PM</div>
+                    <div class="match-time">07:00 PM</div>
                 </div>
             
                 <div class="match-item">
@@ -520,7 +506,21 @@
                     <div class="match-teams">
                         <span>محمد سالم</span> 
                         <span class="vs">VS</span> 
-                        <span>يوسف التهامي</span>
+                        <span>أحمد عماد</span>
+                    </div>
+                    <div class="match-result">
+                        <div class="score-box">_</div>
+                        <div class="score-box">_</div>
+                    </div>
+                    <div class="match-time">07:40 PM</div>
+                </div>
+            
+                <div class="match-item">
+                    <div class="match-group">المجموعة 1</div>
+                    <div class="match-teams">
+                        <span>إسلام حسن</span> 
+                        <span class="vs">VS</span> 
+                        <span>عبده ربيع</span>
                     </div>
                     <div class="match-result">
                         <div class="score-box">_</div>
@@ -528,10 +528,11 @@
                     </div>
                     <div class="match-time">08:20 PM</div>
                 </div>
+            
             </div>
             <div class="day-card">
-                <span class="day-label">اليوم الثاني</span>
-                <div class="day-header">الأحد: 26-01-2026</div>
+                <span class="day-label">اليوم 2</span>
+                <div class="day-header">السبت: 31-01-2026</div>
         
                 <div class="match-item">
                     <div class="match-group">المجموعة 4</div>
@@ -544,7 +545,21 @@
                         <div class="score-box">_</div>
                         <div class="score-box">_</div>
                     </div>
-                    <div class="match-time">08:00 PM</div>
+                    <div class="match-time">07:00 PM</div>
+                </div>
+            
+                <div class="match-item">
+                    <div class="match-group">المجموعة 6</div>
+                    <div class="match-teams">
+                        <span>نسور البيضا</span> 
+                        <span class="vs">VS</span> 
+                        <span>منتخب البيضا</span>
+                    </div>
+                    <div class="match-result">
+                        <div class="score-box">_</div>
+                        <div class="score-box">_</div>
+                    </div>
+                    <div class="match-time">07:40 PM</div>
                 </div>
             
                 <div class="match-item">
@@ -558,39 +573,26 @@
                         <div class="score-box">_</div>
                         <div class="score-box">_</div>
                     </div>
-                    <div class="match-time">08:40 PM</div>
+                    <div class="match-time">08:20 PM</div>
                 </div>
             
+            </div>
+            <div class="day-card">
+                <span class="day-label">اليوم 3</span>
+                <div class="day-header">الأحد: 01-02-2026</div>
+        
                 <div class="match-item">
                     <div class="match-group">المجموعة 6</div>
                     <div class="match-teams">
-                        <span>علي لمونة</span> 
+                        <span>علي لمنونة</span> 
                         <span class="vs">VS</span> 
-                        <span>نسور البيضا</span>
+                        <span>القصر</span>
                     </div>
                     <div class="match-result">
                         <div class="score-box">_</div>
                         <div class="score-box">_</div>
                     </div>
-                    <div class="match-time">09:20 PM</div>
-                </div>
-            </div>
-            <div class="day-card">
-                <span class="day-label">اليوم الثالث</span>
-                <div class="day-header">الاثنين: 27-01-2026</div>
-        
-                <div class="match-item">
-                    <div class="match-group">المجموعة 1</div>
-                    <div class="match-teams">
-                        <span>أحمد محسن</span> 
-                        <span class="vs">VS</span> 
-                        <span>زياد عبد الوهاب</span>
-                    </div>
-                    <div class="match-result">
-                        <div class="score-box">_</div>
-                        <div class="score-box">_</div>
-                    </div>
-                    <div class="match-time">07:00 PM</div>
+                    <div class="match-time">08:00 PM</div>
                 </div>
             
                 <div class="match-item">
@@ -604,7 +606,7 @@
                         <div class="score-box">_</div>
                         <div class="score-box">_</div>
                     </div>
-                    <div class="match-time">07:40 PM</div>
+                    <div class="match-time">08:40 PM</div>
                 </div>
             
                 <div class="match-item">
@@ -612,18 +614,19 @@
                     <div class="match-teams">
                         <span>إبراهيم علاء</span> 
                         <span class="vs">VS</span> 
-                        <span>أحمد عماد</span>
+                        <span>يوسف التهامي</span>
                     </div>
                     <div class="match-result">
                         <div class="score-box">_</div>
                         <div class="score-box">_</div>
                     </div>
-                    <div class="match-time">08:20 PM</div>
+                    <div class="match-time">09:20 PM</div>
                 </div>
+            
             </div>
             <div class="day-card">
-                <span class="day-label">اليوم الرابع</span>
-                <div class="day-header">الثلاثاء: 28-01-2026</div>
+                <span class="day-label">اليوم 4</span>
+                <div class="day-header">الاثنين: 02-02-2026</div>
         
                 <div class="match-item">
                     <div class="match-group">المجموعة 4</div>
@@ -654,11 +657,11 @@
                 </div>
             
                 <div class="match-item">
-                    <div class="match-group">المجموعة 6</div>
+                    <div class="match-group">المجموعة 1</div>
                     <div class="match-teams">
-                        <span>القصر</span> 
+                        <span>أحمد محسن</span> 
                         <span class="vs">VS</span> 
-                        <span>منتخب البيضا</span>
+                        <span>زياد عبد الوهاب</span>
                     </div>
                     <div class="match-result">
                         <div class="score-box">_</div>
@@ -666,10 +669,11 @@
                     </div>
                     <div class="match-time">08:20 PM</div>
                 </div>
+            
             </div>
             <div class="day-card">
-                <span class="day-label">اليوم الخامس</span>
-                <div class="day-header">الأربعاء: 29-01-2026</div>
+                <span class="day-label">اليوم 5</span>
+                <div class="day-header">الثلاثاء: 03-02-2026</div>
         
                 <div class="match-item">
                     <div class="match-group">المجموعة 1</div>
@@ -712,10 +716,11 @@
                     </div>
                     <div class="match-time">08:20 PM</div>
                 </div>
+            
             </div>
             <div class="day-card">
-                <span class="day-label">اليوم السادس</span>
-                <div class="day-header">السبت: 01-02-2026</div>
+                <span class="day-label">اليوم 6</span>
+                <div class="day-header">الأربعاء: 04-02-2026</div>
         
                 <div class="match-item">
                     <div class="match-group">المجموعة 4</div>
@@ -732,11 +737,11 @@
                 </div>
             
                 <div class="match-item">
-                    <div class="match-group">المجموعة 5</div>
+                    <div class="match-group">المجموعة 6</div>
                     <div class="match-teams">
-                        <span>محمد رجب</span> 
+                        <span>نسور البيضا</span> 
                         <span class="vs">VS</span> 
-                        <span>أحمد منفي</span>
+                        <span>علي لمنونة</span>
                     </div>
                     <div class="match-result">
                         <div class="score-box">_</div>
@@ -746,11 +751,11 @@
                 </div>
             
                 <div class="match-item">
-                    <div class="match-group">المجموعة 6</div>
+                    <div class="match-group">المجموعة 5</div>
                     <div class="match-teams">
-                        <span>نسور البيضا</span> 
+                        <span>أحمد منفي</span> 
                         <span class="vs">VS</span> 
-                        <span>القصر</span>
+                        <span>محمد رجب</span>
                     </div>
                     <div class="match-result">
                         <div class="score-box">_</div>
@@ -758,10 +763,11 @@
                     </div>
                     <div class="match-time">08:20 PM</div>
                 </div>
+            
             </div>
             <div class="day-card">
-                <span class="day-label">اليوم السابع</span>
-                <div class="day-header">الأحد: 02-02-2026</div>
+                <span class="day-label">اليوم 7</span>
+                <div class="day-header">السبت: 07-02-2026</div>
         
                 <div class="match-item">
                     <div class="match-group">المجموعة 1</div>
@@ -774,7 +780,7 @@
                         <div class="score-box">_</div>
                         <div class="score-box">_</div>
                     </div>
-                    <div class="match-time">08:00 PM</div>
+                    <div class="match-time">07:00 PM</div>
                 </div>
             
                 <div class="match-item">
@@ -788,26 +794,27 @@
                         <div class="score-box">_</div>
                         <div class="score-box">_</div>
                     </div>
-                    <div class="match-time">08:40 PM</div>
+                    <div class="match-time">07:40 PM</div>
                 </div>
             
                 <div class="match-item">
                     <div class="match-group">المجموعة 3</div>
                     <div class="match-teams">
-                        <span>يوسف التهامي</span> 
+                        <span>أحمد عماد</span> 
                         <span class="vs">VS</span> 
-                        <span>أحمد عماد</span>
+                        <span>يوسف التهامي</span>
                     </div>
                     <div class="match-result">
                         <div class="score-box">_</div>
                         <div class="score-box">_</div>
                     </div>
-                    <div class="match-time">09:20 PM</div>
+                    <div class="match-time">08:20 PM</div>
                 </div>
+            
             </div>
             <div class="day-card">
-                <span class="day-label">اليوم الثامن</span>
-                <div class="day-header">الاثنين: 03-02-2026</div>
+                <span class="day-label">اليوم 8</span>
+                <div class="day-header">الأحد: 08-02-2026</div>
         
                 <div class="match-item">
                     <div class="match-group">المجموعة 4</div>
@@ -820,40 +827,41 @@
                         <div class="score-box">_</div>
                         <div class="score-box">_</div>
                     </div>
-                    <div class="match-time">07:00 PM</div>
+                    <div class="match-time">08:00 PM</div>
                 </div>
             
                 <div class="match-item">
                     <div class="match-group">المجموعة 5</div>
                     <div class="match-teams">
-                        <span>الوراقية</span> 
+                        <span>معاذ شريف</span> 
                         <span class="vs">VS</span> 
-                        <span>معاذ شريف</span>
+                        <span>الوراقية</span>
                     </div>
                     <div class="match-result">
                         <div class="score-box">_</div>
                         <div class="score-box">_</div>
                     </div>
-                    <div class="match-time">07:40 PM</div>
+                    <div class="match-time">08:40 PM</div>
                 </div>
             
                 <div class="match-item">
                     <div class="match-group">المجموعة 6</div>
                     <div class="match-teams">
-                        <span>علي لمونة</span> 
+                        <span>منتخب البيضا</span> 
                         <span class="vs">VS</span> 
-                        <span>منتخب البيضا</span>
+                        <span>القصر</span>
                     </div>
                     <div class="match-result">
                         <div class="score-box">_</div>
                         <div class="score-box">_</div>
                     </div>
-                    <div class="match-time">08:20 PM</div>
+                    <div class="match-time">09:20 PM</div>
                 </div>
+            
             </div>
             <div class="day-card">
-                <span class="day-label">اليوم التاسع</span>
-                <div class="day-header">الثلاثاء: 04-02-2026</div>
+                <span class="day-label">اليوم 9</span>
+                <div class="day-header">الاثنين: 09-02-2026</div>
         
                 <div class="match-item">
                     <div class="match-group">المجموعة 1</div>
@@ -888,7 +896,7 @@
                     <div class="match-teams">
                         <span>محمد سالم</span> 
                         <span class="vs">VS</span> 
-                        <span>أحمد عماد</span>
+                        <span>يوسف التهامي</span>
                     </div>
                     <div class="match-result">
                         <div class="score-box">_</div>
@@ -896,10 +904,11 @@
                     </div>
                     <div class="match-time">08:20 PM</div>
                 </div>
+            
             </div>
             <div class="day-card">
-                <span class="day-label">اليوم العاشر</span>
-                <div class="day-header">الأربعاء: 05-02-2026</div>
+                <span class="day-label">اليوم 10</span>
+                <div class="day-header">الثلاثاء: 10-02-2026</div>
         
                 <div class="match-item">
                     <div class="match-group">المجموعة 4</div>
@@ -934,7 +943,7 @@
                     <div class="match-teams">
                         <span>نسور البيضا</span> 
                         <span class="vs">VS</span> 
-                        <span>علي لمونة</span>
+                        <span>القصر</span>
                     </div>
                     <div class="match-result">
                         <div class="score-box">_</div>
@@ -942,10 +951,11 @@
                     </div>
                     <div class="match-time">08:20 PM</div>
                 </div>
+            
             </div>
             <div class="day-card">
-                <span class="day-label">اليوم الحادي عشر</span>
-                <div class="day-header">السبت: 08-02-2026</div>
+                <span class="day-label">اليوم 11</span>
+                <div class="day-header">الأربعاء: 11-02-2026</div>
         
                 <div class="match-item">
                     <div class="match-group">المجموعة 1</div>
@@ -978,7 +988,7 @@
                 <div class="match-item">
                     <div class="match-group">المجموعة 3</div>
                     <div class="match-teams">
-                        <span>يوسف التهامي</span> 
+                        <span>أحمد عماد</span> 
                         <span class="vs">VS</span> 
                         <span>إبراهيم علاء</span>
                     </div>
@@ -988,10 +998,11 @@
                     </div>
                     <div class="match-time">08:20 PM</div>
                 </div>
+            
             </div>
             <div class="day-card">
-                <span class="day-label">اليوم الثاني عشر</span>
-                <div class="day-header">الأحد: 09-02-2026</div>
+                <span class="day-label">اليوم 12</span>
+                <div class="day-header">السبت: 14-02-2026</div>
         
                 <div class="match-item">
                     <div class="match-group">المجموعة 4</div>
@@ -1004,7 +1015,7 @@
                         <div class="score-box">_</div>
                         <div class="score-box">_</div>
                     </div>
-                    <div class="match-time">08:00 PM</div>
+                    <div class="match-time">07:00 PM</div>
                 </div>
             
                 <div class="match-item">
@@ -1018,23 +1029,26 @@
                         <div class="score-box">_</div>
                         <div class="score-box">_</div>
                     </div>
-                    <div class="match-time">08:40 PM</div>
+                    <div class="match-time">07:40 PM</div>
                 </div>
             
                 <div class="match-item">
                     <div class="match-group">المجموعة 6</div>
                     <div class="match-teams">
-                        <span>القصر</span> 
+                        <span>منتخب البيضا</span> 
                         <span class="vs">VS</span> 
-                        <span>منتخب البيضا</span>
+                        <span>علي لمنونة</span>
                     </div>
                     <div class="match-result">
                         <div class="score-box">_</div>
                         <div class="score-box">_</div>
                     </div>
-                    <div class="match-time">09:20 PM</div>
+                    <div class="match-time">08:20 PM</div>
                 </div>
+            
             </div>
+
+
         </div>
 
         <h2 class="section-title">🔥 الأدوار الإقصائية</h2>
