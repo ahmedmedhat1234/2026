@@ -16,6 +16,7 @@
             --glass-border: rgba(255, 255, 255, 0.1);
             --success-green: #28a745;
             --error-red: #ff4d4d;
+            --draw-blue: #007bff;
         }
 
         * {
@@ -624,10 +625,10 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr><td><span class="position">1</span>منتخب البيضا</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
-                        <tr><td><span class="position">2</span>القصر</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+                        <tr><td><span class="position">1</span>القصر</td><td>2</td><td>1</td><td>1</td><td>0</td><td>4</td><td>3</td><td>1</td><td>4</td></tr>
+                        <tr><td><span class="position">2</span>منتخب البيضا</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
                         <tr><td><span class="position">3</span>علي لمونة</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                        <tr><td><span class="position">4</span>نسور البيضا</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                        <tr><td><span class="position">4</span>نسور البيضا</td><td>1</td><td>0</td><td>0</td><td>1</td><td>2</td><td>3</td><td>-1</td><td>0</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -741,8 +742,8 @@
                         </div>
                     </div>
                     <div class="match-result">
-                        <div class="score-box" style="background: var(--primary-gold); color: white;">1</div>
-                        <div class="score-box" style="background: var(--primary-gold); color: white;">1</div>
+                        <div class="score-box" style="background: var(--draw-blue); color: white;">1</div>
+                        <div class="score-box" style="background: var(--draw-blue); color: white;">1</div>
                     </div>
                     <div class="match-time">07:40 PM</div>
                 </div>
@@ -846,8 +847,8 @@
                         </div>
                     </div>
                     <div class="match-result">
-                        <div class="score-box">5</div>
-                        <div class="score-box">0</div>
+                        <div class="score-box" style="background: var(--success-green); color: white;">5</div>
+                        <div class="score-box" style="background: var(--error-red); color: white;">0</div>
                     </div>
                     <div class="match-time">07:00 PM</div>
                 </div>
@@ -866,8 +867,8 @@
                         </div>
                     </div>
                     <div class="match-result">
-                        <div class="score-box" style="background: var(--accent-blue); color: white;">1</div>
-                        <div class="score-box" style="background: var(--accent-blue); color: white;">1</div>
+                        <div class="score-box" style="background: var(--draw-blue); color: white;">1</div>
+                        <div class="score-box" style="background: var(--draw-blue); color: white;">1</div>
                     </div>
                     <div class="match-time">07:40 PM</div>
                 </div>
@@ -875,13 +876,19 @@
                 <div class="match-item">
                     <div class="match-group">المجموعة 6</div>
                     <div class="match-teams">
-                        <span>نسور البيضا</span>
+                        <div style="display: flex; flex-direction: column; align-items: flex-start; flex: 1;">
+                            <span>نسور البيضا</span>
+                            <span style="font-size: 0.8em; color: #aaa; font-weight: normal;">⚽ شادي خميس، محمد وائل</span>
+                        </div>
                         <span class="vs">VS</span>
-                        <span>القصر</span>
+                        <div style="display: flex; flex-direction: column; align-items: flex-end; flex: 1;">
+                            <span>القصر</span>
+                            <span style="font-size: 0.8em; color: var(--primary-gold); font-weight: normal;">⚽ حسن رشاد (2)، محمود علي</span>
+                        </div>
                     </div>
                     <div class="match-result">
-                        <div class="score-box">_</div>
-                        <div class="score-box">_</div>
+                        <div class="score-box" style="background: var(--error-red); color: white;">2</div>
+                        <div class="score-box" style="background: var(--success-green); color: white;">3</div>
                     </div>
                     <div class="match-time">08:20 PM</div>
                 </div>
