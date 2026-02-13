@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-
 <html dir="rtl" lang="ar">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>دورة أبوصالح 2026 - احمد علوش</title>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&amp;display=swap" rel="stylesheet"/>
-<style>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>دورة أبوصالح 2026 - احمد علوش</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&amp;display=swap" rel="stylesheet"/>
+    <style>
         :root {
             --primary-gold: #ffd700;
             --luxury-blue: #001f3f;
@@ -91,132 +90,136 @@
             background: linear-gradient(270deg, transparent, var(--primary-gold));
         }
 
-        .tables-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 30px;
-            margin-bottom: 50px;
-        }
-
-        .group-table {
-            background: var(--glass-bg);
-            backdrop-filter: blur(15px);
-            border: 1px solid var(--glass-border);
-            border-radius: 20px;
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .group-table:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-            border-color: var(--primary-gold);
-        }
-
-        .table-header {
+        /* Bracket Styles */
+        .bracket-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: stretch;
+            gap: 20px;
+            margin: 40px 0;
+            overflow-x: auto;
             padding: 20px;
+            background: var(--glass-bg);
+            border-radius: 20px;
+            border: 1px solid var(--glass-border);
+        }
+
+        .bracket-round {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            min-width: 250px;
+        }
+
+        .round-title {
             text-align: center;
-            background: rgba(255, 255, 255, 0.1);
             color: var(--primary-gold);
             font-weight: 900;
-            font-size: 1.5em;
-            border-bottom: 1px solid var(--glass-border);
+            margin-bottom: 20px;
+            font-size: 1.2em;
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--primary-gold);
+            padding-bottom: 10px;
         }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
+        .bracket-match {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 15px;
+            margin: 15px 0;
+            position: relative;
+            transition: all 0.3s ease;
         }
 
-        th {
-            padding: 12px 8px;
-            background: rgba(0,0,0,0.2);
+        .bracket-match:hover {
+            border-color: var(--primary-gold);
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .match-info {
+            font-size: 0.75em;
             color: #aaa;
-            font-size: 0.8em;
-            text-align: center;
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .bracket-team {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
             font-weight: 700;
+            font-size: 0.95em;
         }
 
-        td {
-            padding: 12px 8px;
-            text-align: center;
-            border-bottom: 1px solid var(--glass-border);
-            font-weight: 600;
-            font-size: 0.9em;
+        .bracket-team:first-child {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        td:first-child {
-            text-align: right;
-            padding-right: 15px;
+        .team-name {
+            flex: 1;
         }
 
-        tr:last-child td {
-            border-bottom: none;
+        .team-score {
+            width: 30px;
+            height: 30px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-gold);
+            font-weight: 900;
         }
 
-        .position {
-            display: inline-block;
-            width: 28px;
-            height: 28px;
-            line-height: 28px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.1);
-            margin-left: 10px;
-            font-size: 0.8em;
-        }
-
+        /* Schedule Styles */
         .days-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 12px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
         }
 
         .day-card {
             background: var(--glass-bg);
             backdrop-filter: blur(15px);
             border: 1px solid var(--glass-border);
-            border-radius: 12px;
-            padding: 12px;
-            position: relative;
+            border-radius: 20px;
+            padding: 20px;
         }
 
         .day-header {
             text-align: center;
-            font-size: 0.75em;
+            font-size: 1.2em;
             font-weight: 900;
             color: var(--primary-gold);
-            margin-bottom: 10px;
-            padding-bottom: 6px;
-            border-bottom: 1px solid rgba(255,215,0,0.3);
-        }
-
-        .day-label {
-            display: block;
-            font-size: 0.65em;
-            color: #fff;
-            opacity: 0.7;
-            margin-bottom: 3px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+            padding-bottom: 10px;
         }
 
         .match-item {
-            background: rgba(255,255,255,0.03);
-            border-radius: 8px;
-            padding: 6px;
-            margin-bottom: 6px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 15px;
             border: 1px solid transparent;
             transition: all 0.3s ease;
         }
 
         .match-item:hover {
-            background: rgba(255,255,255,0.08);
+            background: rgba(255, 255, 255, 0.08);
             border-color: var(--primary-gold);
-            transform: scale(1.02);
         }
 
-        .match-group {
-            font-size: 0.6em;
-            color: #888;
-            margin-bottom: 2px;
+        .match-time {
+            font-size: 0.85em;
+            color: var(--primary-gold);
+            font-weight: 900;
+            margin-bottom: 5px;
             text-align: center;
         }
 
@@ -225,48 +228,15 @@
             justify-content: space-between;
             align-items: center;
             font-weight: 700;
-            font-size: 0.7em;
         }
 
         .vs {
             color: var(--primary-gold);
             font-style: italic;
-            font-size: 0.7em;
-            padding: 0 5px;
+            padding: 0 10px;
         }
 
-        .match-result {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 4px;
-            margin-top: 4px;
-        }
-
-        .score-box {
-            width: 20px;
-            height: 20px;
-            background: rgba(255,255,255,0.1);
-            border: 1px solid var(--glass-border);
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 900;
-            color: var(--primary-gold);
-            font-size: 0.65em;
-        }
-
-        .match-time {
-            text-align: center;
-            margin-top: 4px;
-            font-size: 0.65em;
-            color: var(--primary-gold);
-            font-weight: bold;
-            opacity: 0.8;
-        }
-
-        /* Stats */
+        /* Stats & Organizer */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -274,1053 +244,223 @@
             margin-bottom: 50px;
         }
 
-        .organizer-section {
-            background: var(--glass-bg);
-            backdrop-filter: blur(15px);
-            border: 1px solid var(--glass-border);
-            border-radius: 20px;
-            padding: 30px;
-            text-align: center;
-            margin-bottom: 50px;
-            transition: all 0.3s ease;
-        }
-
-        .organizer-section:hover {
-            border-color: var(--primary-gold);
-            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.1);
-        }
-
-        .organizer-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 3px solid var(--primary-gold);
-            margin-bottom: 15px;
-            object-fit: cover;
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
-        }
-
-        .organizer-name {
-            font-size: 1.8em;
-            font-weight: 900;
-            color: var(--primary-gold);
-            margin-bottom: 5px;
-        }
-
-        .organizer-title {
-            font-size: 1.1em;
-            color: #ccc;
-            font-weight: 700;
-        }
-
         .stat-card {
             background: var(--glass-bg);
-            backdrop-filter: blur(15px);
             border: 1px solid var(--glass-border);
             border-radius: 20px;
             padding: 20px;
         }
 
+        .table-header {
+            padding: 15px;
+            text-align: center;
+            color: var(--primary-gold);
+            font-weight: 900;
+            font-size: 1.3em;
+            border-bottom: 1px solid var(--glass-border);
+            margin-bottom: 15px;
+        }
+
         .stat-item {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            padding: 12px;
+            padding: 10px;
             border-bottom: 1px solid var(--glass-border);
         }
 
-        .stat-item:last-child { border-bottom: none; }
-
-        .stat-name { font-weight: 700; }
         .stat-value {
             background: var(--primary-gold);
             color: var(--deep-blue);
             padding: 2px 10px;
             border-radius: 10px;
             font-weight: 900;
-            min-width: 35px;
-            text-align: center;
         }
 
-        /* Knockout Stage */
-        .knockout-container {
-            overflow-x: auto;
-            padding: 20px 0;
-        }
-
-        .knockout-bracket {
-            display: flex;
-            justify-content: space-between;
-            min-width: 1000px;
-            gap: 20px;
-        }
-
-        .bracket-column {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-        }
-
-        .bracket-match {
+        .organizer-section {
             background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            border-radius: 10px;
-            padding: 10px;
-            margin: 10px 0;
-            font-size: 0.85em;
-        }
-
-        .bracket-match .team {
-            display: flex;
-            justify-content: space-between;
-            padding: 5px 0;
-        }
-
-        .bracket-match .team.winner { color: var(--primary-gold); font-weight: 900; }
-
-        /* ✅ Rules Box (شرح النظام) */
-        .rules-box{
-            background: var(--glass-bg);
-            backdrop-filter: blur(15px);
             border: 1px solid var(--glass-border);
             border-radius: 20px;
-            padding: 22px;
-            margin: 10px auto 25px;
-            max-width: 1000px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-        }
-        .rules-box h3{
-            color: var(--primary-gold);
-            font-size: 1.25em;
-            font-weight: 900;
-            margin-bottom: 10px;
+            padding: 30px;
             text-align: center;
+            margin-bottom: 50px;
         }
-        .rules-box p{
-            color: #ddd;
-            font-size: 0.95em;
-            margin-bottom: 12px;
-            text-align: center;
-        }
-        .rules-box ul{
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        .rules-box li{
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.07);
-            border-radius: 12px;
-            padding: 10px 12px;
-            margin-bottom: 10px;
-            font-size: 0.92em;
-            color: #eee;
-            line-height: 1.7;
-        }
-        .rules-box li strong{
-            color: var(--primary-gold);
-        }
-        .rules-note{
-            margin-top: 10px;
-            padding-top: 10px;
-            border-top: 1px solid rgba(255,215,0,0.25);
-            font-size: 0.9em;
-            color: #ccc;
-            opacity: 0.95;
-            text-align: center;
-        }
-        .badge{
-            display:inline-block;
-            padding: 2px 10px;
-            border-radius: 999px;
-            font-weight: 900;
-            font-size: 0.8em;
-            margin-left: 6px;
-            background: rgba(255,215,0,0.15);
-            border: 1px solid rgba(255,215,0,0.35);
-            color: var(--primary-gold);
+
+        .organizer-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid var(--primary-gold);
+            margin-bottom: 15px;
         }
 
         @media (max-width: 768px) {
-            .header h1 { font-size: 2.2em; }
-            .year { font-size: 2em; }
-            .tables-grid { grid-template-columns: 1fr; }
+            .header h1 { font-size: 2em; }
+            .bracket-container { flex-direction: column; align-items: center; }
+            .bracket-round { width: 100%; }
         }
     </style>
 </head>
 <body>
-<div class="container">
-<div class="header">
-<h1>دورة مركز شباب أبو صالح</h1>
-<div class="year">2026</div>
-</div>
-<h2 class="section-title">👤 المسؤول عن التنظيم والموقع</h2>
-<div class="organizer-section">
-<img alt="أحمد مدحت علوش" class="organizer-img" src="1.jpeg"/>
-<div class="organizer-name">أحمد مدحت علوش</div>
-<div class="organizer-title">المسؤول عن إنشاء الموقع والتنظيم</div>
-</div>
-<h2 class="section-title">🏆 الإحصائيات الفردية</h2>
-<div class="stats-grid">
-<div class="stat-card">
-<div class="table-header">⚽ أفضل هداف</div>
-<div class="stat-item"><span class="stat-name"><span class="position">1</span> محمد سالم (محمد سالم)</span><span class="stat-value">12</span></div>
-<div class="stat-item"><span class="stat-name"><span class="position">2</span> الحاوي (إسلام حسن)</span><span class="stat-value">8</span></div>
-<div class="stat-item"><span class="stat-name"><span class="position">3</span> حازم محمد (نجوم الحمراء)</span><span class="stat-value">7</span></div>
-<div class="stat-item"><span class="stat-name"><span class="position">4</span> زيزو (العدلي)</span><span class="stat-value">5</span></div>
-<div class="stat-item"><span class="stat-name"><span class="position">5</span> إيهاب السيد (العدلي)</span><span class="stat-value">5</span></div>
-</div>
-</div>
-<div class="stat-card">
-<div class="table-header">🧤 نظافة الشباك</div>
-<div class="stat-item"><span class="stat-name"><span class="position">1</span> معاذ (عمرو عون)</span><span class="stat-value">1</span></div>
-<div class="stat-item"><span class="stat-name"><span class="position">2</span> عبده عطية (عبده ربيع)</span><span class="stat-value">1</span></div>
-<div class="stat-item"><span class="stat-name"><span class="position">3</span> حمدي محمد (يوسف التهامي)</span><span class="stat-value">1</span></div>
-<div class="stat-item"><span class="stat-name"><span class="position">4</span> روميرو (أنطونياديس)</span><span class="stat-value">1</span></div>
-</div>
-</div>
-<h2 class="section-title">📊 ترتيب المجموعات</h2>
-<div class="tables-grid">
-<div class="group-table">
-<div class="table-header">المجموعة 1</div>
-<table>
-<thead>
-<tr>
-<th>الفريق</th>
-<th>ل</th>
-<th>ف</th>
-<th>ت</th>
-<th>خ</th>
-<th>له</th>
-<th>عليه</th>
-<th>ف</th>
-<th>نقاط</th>
-</tr>
-</thead>
-<tbody><tr><td><span class="position">1</span>إسلام حسن ⭐</td><td>3</td><td>2</td><td>1</td><td>0</td><td>16</td><td>5</td><td>11</td><td>7</td></tr><tr><td><span class="position">2</span>عبده ربيع ⭐</td><td>3</td><td>2</td><td>0</td><td>1</td><td>10</td><td>5</td><td>5</td><td>6</td></tr><tr><td><span class="position">3</span>أحمد محسن ⭐</td><td>3</td><td>1</td><td>1</td><td>1</td><td>4</td><td>4</td><td>0</td><td>4</td></tr><tr><td><span class="position">4</span>زياد عبد الوهاب</td><td>3</td><td>0</td><td>0</td><td>3</td><td>3</td><td>19</td><td>-16</td><td>0</td></tr></tbody>
-</table>
-</div>
-<div class="group-table">
-<div class="table-header">المجموعة 2</div>
-<table>
-<thead>
-<tr>
-<th>الفريق</th>
-<th>ل</th>
-<th>ف</th>
-<th>ت</th>
-<th>خ</th>
-<th>له</th>
-<th>عليه</th>
-<th>ف</th>
-<th>نقاط</th>
-</tr>
-</thead>
-<tbody><tr><td><span class="position">1</span>عمرو عون ⭐</td><td>3</td><td>3</td><td>0</td><td>0</td><td>18</td><td>2</td><td>16</td><td>9</td></tr><tr><td><span class="position">2</span>العدلي ⭐</td><td>3</td><td>2</td><td>0</td><td>1</td><td>15</td><td>6</td><td>9</td><td>6</td></tr><tr><td><span class="position">3</span>محمد مصطفى قاسم</td><td>3</td><td>1</td><td>0</td><td>2</td><td>4</td><td>16</td><td>-12</td><td>3</td></tr><tr><td><span class="position">4</span>محمد سامح</td><td>3</td><td>0</td><td>0</td><td>3</td><td>1</td><td>14</td><td>-13</td><td>0</td></tr></tbody>
-</table>
-</div>
-<div class="group-table">
-<div class="table-header">المجموعة 3</div>
-<table>
-<thead>
-<tr>
-<th>الفريق</th>
-<th>ل</th>
-<th>ف</th>
-<th>ت</th>
-<th>خ</th>
-<th>له</th>
-<th>عليه</th>
-<th>ف</th>
-<th>نقاط</th>
-</tr>
-</thead>
-<tbody><tr><td><span class="position">1</span>محمد سالم ⭐</td><td>3</td><td>3</td><td>0</td><td>0</td><td>22</td><td>2</td><td>20</td><td>9</td></tr><tr><td><span class="position">2</span>أحمد عماد</td><td>2</td><td>1</td><td>0</td><td>1</td><td>3</td><td>8</td><td>-5</td><td>3</td></tr><tr><td><span class="position">3</span>يوسف التهامي</td><td>3</td><td>1</td><td>0</td><td>2</td><td>6</td><td>8</td><td>-2</td><td>3</td></tr><tr><td><span class="position">4</span>إبراهيم علاء</td><td>2</td><td>0</td><td>0</td><td>2</td><td>0</td><td>13</td><td>-13</td><td>0</td></tr></tbody>
-</table>
-</div>
-<div class="group-table">
-<div class="table-header">المجموعة 4</div>
-<table>
-<thead>
-<tr>
-<th>الفريق</th>
-<th>ل</th>
-<th>ف</th>
-<th>ت</th>
-<th>خ</th>
-<th>له</th>
-<th>عليه</th>
-<th>ف</th>
-<th>نقاط</th>
-</tr>
-</thead>
-<tbody><tr><td><span class="position">1</span>نجوم الحمراء ⭐</td><td>3</td><td>3</td><td>0</td><td>0</td><td>13</td><td>2</td><td>11</td><td>9</td></tr><tr><td><span class="position">2</span>وليد ممدوح</td><td>2</td><td>1</td><td>0</td><td>1</td><td>9</td><td>3</td><td>6</td><td>3</td></tr><tr><td><span class="position">3</span>أنطونياديس</td><td>2</td><td>1</td><td>0</td><td>1</td><td>6</td><td>2</td><td>4</td><td>3</td></tr><tr><td><span class="position">4</span>روزة</td><td>3</td><td>0</td><td>0</td><td>3</td><td>0</td><td>21</td><td>-21</td><td>0</td></tr></tbody>
-</table>
-</div>
-<div class="group-table">
-<div class="table-header">المجموعة 5</div>
-<table>
-<thead>
-<tr>
-<th>الفريق</th>
-<th>ل</th>
-<th>ف</th>
-<th>ت</th>
-<th>خ</th>
-<th>له</th>
-<th>عليه</th>
-<th>ف</th>
-<th>نقاط</th>
-</tr>
-</thead>
-<tbody><tr><td><span class="position">1</span>أحمد منفي ⭐</td><td>3</td><td>2</td><td>0</td><td>1</td><td>9</td><td>7</td><td>2</td><td>6</td></tr><tr><td><span class="position">2</span>معاذ شريف ⭐</td><td>3</td><td>2</td><td>0</td><td>1</td><td>7</td><td>6</td><td>1</td><td>6</td></tr><tr><td><span class="position">3</span>الوراقية</td><td>2</td><td>1</td><td>0</td><td>1</td><td>4</td><td>2</td><td>2</td><td>3</td></tr><tr><td><span class="position">4</span>محمد رجب</td><td>2</td><td>0</td><td>0</td><td>2</td><td>2</td><td>7</td><td>-5</td><td>0</td></tr></tbody>
-</table>
-</div>
-<div class="group-table">
-<div class="table-header">المجموعة 6</div>
-<table>
-<thead>
-<tr>
-<th>الفريق</th>
-<th>ل</th>
-<th>ف</th>
-<th>ت</th>
-<th>خ</th>
-<th>له</th>
-<th>عليه</th>
-<th>ف</th>
-<th>نقاط</th>
-</tr>
-</thead>
-<tbody><tr><td><span class="position">1</span>أحمد إسماعيل ⭐</td><td>3</td><td>2</td><td>0</td><td>1</td><td>9</td><td>6</td><td>3</td><td>6</td></tr><tr><td><span class="position">2</span>نسور البيضا ⭐</td><td>3</td><td>2</td><td>0</td><td>1</td><td>6</td><td>5</td><td>1</td><td>6</td></tr><tr><td><span class="position">3</span>القصر <span style="color: var(--error-red); margin-right: 5px;">(-1)</span></td><td>3</td><td>1</td><td>1</td><td>1</td><td>4</td><td>6</td><td>-2</td><td>3</td></tr><tr><td><span class="position">4</span>منتخب البيضا</td><td>3</td><td>0</td><td>1</td><td>2</td><td>4</td><td>6</td><td>-2</td><td>1</td></tr></tbody>
-</table>
-</div>
-</div>
-<h2 class="section-title">📅 جدول المباريات </h2>
-<div class="days-grid">
-<!-- اليوم 1 -->
-<div class="day-card">
-<span class="day-label">اليوم 1</span>
-<div class="day-header">الأربعاء: 28-01-2026</div>
-<div class="match-item">
-<div class="match-group">المجموعة 3</div>
-<div class="match-teams">
-<div style="display: flex; flex-direction: column; align-items: flex-start; flex: 1;">
-<span>محمد سالم</span>
-<span style="font-size: 0.8em; color: #aaa; font-weight: normal;">⚽ محمد سالم (4)، محمود عبده (2)، عصام</span>
-</div>
-<span class="vs">VS</span>
-<div style="display: flex; flex-direction: column; align-items: flex-end; flex: 1;">
-<span>احمد عماد</span>
-<span style="font-size: 0.8em; color: var(--primary-gold); font-weight: normal;">⚽ عبده راشد</span>
-</div>
-</div>
-<div class="match-result">
-<div class="score-box" style="background: var(--success-green); color: white;">7</div>
-<div class="score-box" style="background: var(--error-red); color: white;">1</div>
-</div>
-<div class="match-time">07:00 PM</div>
-</div>
-<div class="match-item">
-<div class="match-group">المجموعة 2</div>
-<div class="match-teams">
-<div style="display: flex; flex-direction: column; align-items: flex-start; flex: 1;">
-<span>عمرو عون</span>
-<span style="font-size: 0.8em; color: #aaa; font-weight: normal;">⚽ ابراهيم حسن (2)، محمود حميدة (2)، العربي</span>
-</div>
-<span class="vs">VS</span>
-<div style="display: flex; flex-direction: column; align-items: flex-end; flex: 1;">
-<span>العدلي</span>
-<span style="font-size: 0.8em; color: var(--primary-gold); font-weight: normal;">⚽ ابراهيم طيخا</span>
-</div>
-</div>
-<div class="match-result">
-<div class="score-box" style="background: var(--success-green); color: white;">5</div>
-<div class="score-box" style="background: var(--error-red); color: white;">1</div>
-</div>
-<div class="match-time">07:40 PM</div>
-</div>
-<div class="match-item">
-<div class="match-group">المجموعة 1</div>
-<div class="match-teams">
-<div style="display: flex; flex-direction: column; align-items: flex-start; flex: 1;">
-<span>إسلام حسن</span>
-<span style="font-size: 0.8em; color: #aaa; font-weight: normal;">⚽ الحاوي، سبيرتو  (2)</span>
-</div>
-<span class="vs">VS</span>
-<div style="display: flex; flex-direction: column; align-items: flex-end; flex: 1;">
-<span>عبده ربيع</span>
-<span style="font-size: 0.8em; color: var(--primary-gold); font-weight: normal;">⚽ موكا</span>
-</div>
-</div>
-<div class="match-result">
-<div class="score-box" style="background: var(--success-green); color: white;">3</div>
-<div class="score-box" style="background: var(--error-red); color: white;">1</div>
-</div>
-<div class="match-time">08:20 PM</div>
-</div>
-</div>
-<!-- اليوم 2 -->
-<div class="day-card">
-<span class="day-label">اليوم 2</span>
-<div class="day-header">السبت: 31-01-2026</div>
-<div class="match-item">
-<div class="match-group">المجموعة 4</div>
-<div class="match-teams">
-<div style="display: flex; flex-direction: column; align-items: flex-start; flex: 1;">
-<span>نجوم الحمراء</span>\n<span style="font-size: 0.8em; color: #aaa; font-weight: normal;">⚽ حازم محمد (5)، يحيي سعيد (2)، احمد بسام</span>
-<span style="font-size: 0.8em; color: #aaa; font-weight: normal;">⚽ يحيي، حازم، احمد بسام</span>
-</div>
-<span class="vs">VS</span>
-<div style="display: flex; flex-direction: column; align-items: flex-end; flex: 1;">
-<span>وليد ممدوح</span>
-<span style="font-size: 0.8em; color: var(--primary-gold); font-weight: normal;">⚽ الغزال</span>
-</div>
-</div>
-<div class="match-result">
-<div class="score-box" style="background: var(--success-green); color: white;">3</div>
-<div class="score-box" style="background: var(--error-red); color: white;">1</div>
-</div>
-<div class="match-time">07:00 PM</div>
-</div>
-<div class="match-item">
-<div class="match-group">المجموعة 6</div>
-<div class="match-teams">
-<div style="display: flex; flex-direction: column; align-items: flex-start; flex: 1;">
-<span>منتخب البيضا</span>
-<span style="font-size: 0.8em; color: #aaa; font-weight: normal;">⚽ محمد ابراهيم</span>
-</div>
-<span class="vs">VS</span>
-<div style="display: flex; flex-direction: column; align-items: flex-end; flex: 1;">
-<span>القصر</span>
-<span style="font-size: 0.8em; color: var(--primary-gold); font-weight: normal;">⚽ سعيد هاني</span>
-</div>
-</div>
-<div class="match-result">
-<div class="score-box" style="background: var(--draw-blue); color: white;">1</div>
-<div class="score-box" style="background: var(--draw-blue); color: white;">1</div>
-</div>
-<div class="match-time">07:40 PM</div>
-</div>
-<div class="match-item">
-<div class="match-group">المجموعة 5</div>
-<div class="match-teams">
-<div style="display: flex; flex-direction: column; align-items: flex-start; flex: 1;">
-<span>محمد رجب</span>
-<span style="font-size: 0.8em; color: #aaa; font-weight: normal;">⚽ رأفت السيد</span>
-</div>
-<span class="vs">VS</span>
-<div style="display: flex; flex-direction: column; align-items: flex-end; flex: 1;">
-<span>معاذ شريف</span>
-<span style="font-size: 0.8em; color: var(--primary-gold); font-weight: normal;">⚽ محمد بكر، محمد مختار</span>
-</div>
-</div>
-<div class="match-result">
-<div class="score-box" style="background: var(--error-red); color: white;">1</div>
-<div class="score-box" style="background: var(--success-green); color: white;">2</div>
-</div>
-<div class="match-time">08:20 PM</div>
-</div>
-</div>
-<!-- اليوم 3 -->
-<div class="day-card">
-<span class="day-label">اليوم 3</span>
-<div class="day-header">الأحد: 01-02-2026</div>
-<div class="match-item">
-<div class="match-group">المجموعة 2</div>
-<div class="match-teams">
-<div style="display: flex; flex-direction: column; align-items: flex-start; flex: 1;">
-<span>عمرو عون</span>
-<span style="font-size: 0.8em; color: #aaa; font-weight: normal;">⚽ ابراهيم حسن (2)، محمود حميدة (2)، احمد سمارة (3)، بلال عون (2)</span>
-</div>
-<span class="vs">VS</span>
-<div style="display: flex; flex-direction: column; align-items: flex-end; flex: 1;">
-<span>محمد مصطفى قاسم</span>
-</div>
-</div>
-<div class="match-result">
-<div class="score-box" style="background: var(--success-green); color: white;">9</div><div class="score-box" style="background: var(--error-red); color: white;">0</div>
-</div>
-<div class="match-time">08:00 PM</div>
-</div>
-<div class="match-item">
-<div class="match-group">المجموعة 1</div>
-<div class="match-teams">
-<div style="display: flex; flex-direction: column; align-items: flex-start; flex: 1;">
-<span>عبده ربيع</span>
-<span style="font-size: 0.8em; color: #aaa; font-weight: normal;">⚽ عبد الله احمد (2)، عمر محمد مسعود (1)، عبده ربيع (1)،  موكا (2)</span>
-</div>
-<span class="vs">VS</span>
-<div style="display: flex; flex-direction: column; align-items: flex-end; flex: 1;">
-<span>زياد عبد الوهاب</span>
-</div>
-</div>
-<div class="match-result">
-<div class="score-box" style="background: var(--success-green); color: white;">6</div><div class="score-box" style="background: var(--error-red); color: white;">0</div>
-</div>
-<div class="match-time">08:40 PM</div>
-</div>
-<div class="match-item">
-<div class="match-group">المجموعة 3</div>
-<div class="match-teams">
-<div style="display: flex; flex-direction: column; align-items: flex-start; flex: 1;">
-<span>إبراهيم علاء</span>
-</div>
-<span class="vs">VS</span>
-<div style="display: flex; flex-direction: column; align-items: flex-end; flex: 1;">
-<span>يوسف التهامي</span>
-<span style="font-size: 0.8em; color: var(--primary-gold); font-weight: normal;">⚽ امير هاني (2)، محمد سامي (1)، شعلان (1)</span>
-</div>
-</div>
-<div class="match-result">
-<div class="score-box" style="background: var(--error-red); color: white;">0</div><div class="score-box" style="background: var(--success-green); color: white;">4</div>
-</div>
-<div class="match-time">09:20 PM</div>
-</div>
-</div>
-<!-- اليوم 4 -->
-<div class="day-card">
-<span class="day-label">اليوم 4</span>
-<div class="day-header">الاثنين: 02-02-2026</div>
-<div class="match-item">
-<div class="match-group">المجموعة 4</div>
-<div class="match-teams">
-<div style="display: flex; flex-direction: column; align-items: flex-start; flex: 1;">
-<span>أنطونياديس</span>
-<span style="font-size: 0.8em; color: #aaa; font-weight: normal;">⚽ محمود شوقي (4)، عبد المولي</span>
-</div>
-<span class="vs">VS</span>
-<div style="display: flex; flex-direction: column; align-items: flex-end; flex: 1;">
-<span>روزة</span>
-</div>
-</div>
-<div class="match-result">
-<div class="score-box" style="background: var(--success-green); color: white;">5</div>
-<div class="score-box" style="background: var(--error-red); color: white;">0</div>
-</div>
-<div class="match-time">07:00 PM</div>
-</div>
-<div class="match-item">
-<div class="match-group">المجموعة 1</div>
-<div class="match-teams">
-<div style="display: flex; flex-direction: column; align-items: flex-start; flex: 1;">
-<span>إسلام حسن</span>
-<span style="font-size: 0.8em; color: #aaa; font-weight: normal;">⚽ محمود طاهر</span>
-</div>
-<span class="vs">VS</span>
-<div style="display: flex; flex-direction: column; align-items: flex-end; flex: 1;">
-<span>أحمد محسن</span>
-<span style="font-size: 0.8em; color: var(--primary-gold); font-weight: normal;">⚽ محمد عادل</span>
-</div>
-</div>
-<div class="match-result">
-<div class="score-box" style="background: var(--draw-blue); color: white;">1</div>
-<div class="score-box" style="background: var(--draw-blue); color: white;">1</div>
-</div>
-<div class="match-time">07:40 PM</div>
-</div>
-<div class="match-item">
-<div class="match-group">المجموعة 6</div>
-<div class="match-teams">
-<div style="display: flex; flex-direction: column; align-items: flex-start; flex: 1;">
-<span>نسور البيضا</span>
-<span style="font-size: 0.8em; color: #aaa; font-weight: normal;">⚽ شادي خميس، محمد وائل</span>
-</div>
-<span class="vs">VS</span>
-<div style="display: flex; flex-direction: column; align-items: flex-end; flex: 1;">
-<span>القصر</span>
-<span style="font-size: 0.8em; color: var(--primary-gold); font-weight: normal;">⚽ حسن رشاد (2)، محمود علي</span>
-</div>
-</div>
-<div class="match-result">
-<div class="score-box" style="background: var(--error-red); color: white;">2</div>
-<div class="score-box" style="background: var(--success-green); color: white;">3</div>
-</div>
-<div class="match-time">08:20 PM</div>
-</div>
-</div>
-<!-- اليوم 5 -->
-<div class="day-card">
-<span class="day-label">اليوم 5</span>
-<div class="day-header">الثلاثاء: 03-02-2026</div>
-<div class="match-item">
-<div class="match-group">المجموعة 3</div>
-<div class="match-teams">
-<div style="display: flex; flex-direction: column; align-items: flex-start; flex: 1;">
-<span>محمد سالم</span>
-<span style="font-size: 0.8em; color: #aaa; font-weight: normal;">⚽ محمد سالم (5)، محمد فرج فرمينيو (2)، نصة السرس، بيومي</span>
-</div>
-<span class="vs">VS</span>
-<div style="display: flex; flex-direction: column; align-items: flex-end; flex: 1;">
-<span>إبراهيم علاء</span>
-</div>
-</div>
-<div class="match-result">
-<div class="score-box" style="background: var(--success-green); color: white;">9</div>
-<div class="score-box" style="background: var(--error-red); color: white;">0</div>
-</div>
-<div class="match-time">08:20 PM</div>
-</div>
-<div class="match-item">
-<div class="match-group">المجموعة 5</div>
-<div class="match-teams">
-<div style="display: flex; flex-direction: column; align-items: flex-start; flex: 1;">
-<span>الوراقية</span>
-<span style="font-size: 0.8em; color: #aaa; font-weight: normal;">⚽ عمر كمال، محمد رمضان، مصطفي رضا</span>
-</div>
-<span class="vs">VS</span>
-<div style="display: flex; flex-direction: column; align-items: flex-end; flex: 1;">
-<span>أحمد منفي</span>
-</div>
-</div>
-<div class="match-result">
-<div class="score-box" style="background: var(--success-green); color: white;">3</div>
-<div class="score-box" style="background: var(--error-red); color: white;">0</div>
-</div>
-<div class="match-time">07:40 PM</div>
-</div>
-<div class="match-item">
-<div class="match-group">المجموعة 2</div>
-<div class="match-teams">
-<div style="display: flex; flex-direction: column; align-items: flex-start; flex: 1;">
-<span>عمرو عون</span>
-<span style="font-size: 0.8em; color: #aaa; font-weight: normal;">⚽ حمصة (2)، عبد الرحمن طاهر، عبودي</span>
-</div>
-<span class="vs">VS</span>
-<div style="display: flex; flex-direction: column; align-items: flex-end; flex: 1;">
-<span>محمد سامح</span>
-<span style="font-size: 0.8em; color: var(--primary-gold); font-weight: normal;">⚽ عمر جمال</span>
-</div>
-</div>
-<div class="match-result">
-<div class="score-box" style="background: var(--success-green); color: white;">4</div>
-<div class="score-box" style="background: var(--error-red); color: white;">1</div>
-</div>
-<div class="match-time">07:00 PM</div>
-</div>
-</div>
-<!-- اليوم 6 -->
-<div class="day-card">
-<span class="day-label">اليوم 6</span>
-<div class="day-header">الأربعاء: 04-02-2026</div>
-<div class="match-item">
-<div class="match-group">المجموعة 4</div>
-<div class="match-teams">
-<div style="display: flex; flex-direction: column; align-items: flex-start; flex: 1;"><span>نجوم الحمراء</span><span style="font-size: 0.8em; color: #aaa; font-weight: normal;">⚽ حازم حمادة (2)</span></div><span class="vs">VS</span><div style="display: flex; flex-direction: column; align-items: flex-end; flex: 1;"><span>أنطونياديس</span><span style="font-size: 0.8em; color: var(--primary-gold); font-weight: normal;">⚽ محمود شوقي</span></div>
-</div>
-<div class="match-result">
-<div class="score-box" style="background: var(--success-green); color: white;">2</div><div class="score-box" style="background: var(--error-red); color: white;">1</div>
-</div>
-<div class="match-time">07:00 PM</div>
-</div>
-<div class="match-item">
-<div class="match-group">المجموعة 6</div>
-<div class="match-teams">
-<div style="display: flex; flex-direction: column; align-items: flex-start; flex: 1;"><span>نسور البيضا</span><span style="font-size: 0.8em; color: #aaa; font-weight: normal;">⚽ شادي خميس، محمد وائل، دريشة</span></div><span class="vs">VS</span><div style="display: flex; flex-direction: column; align-items: flex-end; flex: 1;"><span>أحمد إسماعيل</span><span style="font-size: 0.8em; color: var(--primary-gold); font-weight: normal;">⚽ محمود هاني، كريم عوض</span></div>
-</div>
-<div class="match-result">
-<div class="score-box" style="background: var(--success-green); color: white;">3</div><div class="score-box" style="background: var(--error-red); color: white;">2</div>
-</div>
-<div class="match-time">07:40 PM</div>
-</div>
-<div class="match-item">
-<div class="match-group">المجموعة 1</div>
-<div class="match-teams">
-<div style="display: flex; flex-direction: column; align-items: flex-start; flex: 1;"><span>زياد عبد الوهاب</span></div><span class="vs">VS</span><div style="display: flex; flex-direction: column; align-items: flex-end; flex: 1;"><span>أحمد محسن</span><span style="font-size: 0.8em; color: var(--primary-gold); font-weight: normal;">⚽ باسم عبد الحميد</span></div>
-</div>
-<div class="match-result">
-<div class="score-box" style="background: var(--error-red); color: white;">0</div><div class="score-box" style="background: var(--success-green); color: white;">1</div>
-</div>
-<div class="match-time">08:20 PM</div>
-</div>
-</div>
-<!-- اليوم 7 -->
-<div class="day-card">
-<span class="day-label">اليوم 7</span>
-<div class="day-header">السبت: 07-02-2026</div>
-<div class="match-item">
-<div class="match-group">المجموعة 2</div>
-<div class="match-teams">
-<div style="display: flex; flex-direction: column; align-items: flex-start; flex: 1;"><span>العدلي</span><span style="font-size: 0.8em; color: #aaa; font-weight: normal;">⚽ ايهاب السيد (2)، زيزو (2)، ابراهيم جمعة، حسام حسن، احمد جابر</span></div><span class="vs">VS</span><div style="display: flex; flex-direction: column; align-items: flex-end; flex: 1;"><span>محمد مصطفى قاسم</span><span style="font-size: 0.8em; color: var(--primary-gold); font-weight: normal;">⚽ كوتو</span></div>
-</div>
-<div class="match-result"><div class="score-box" style="background: var(--success-green); color: white;">7</div><div class="score-box" style="background: var(--error-red); color: white;">1</div>
-</div>
-<div class="match-time">07:00 PM</div>
-</div>
-<div class="match-item">
-<div class="match-group">المجموعة 5</div>
-<div class="match-teams">
-<div style="display: flex; flex-direction: column; align-items: flex-start; flex: 1;"><span>أحمد منفي</span><span style="font-size: 0.8em; color: #aaa; font-weight: normal;">⚽ رجب فرج (2)، فارس السمالوسي، المداح، اسماعيل عبد الهادي</span></div><span class="vs">VS</span><div style="display: flex; flex-direction: column; align-items: flex-end; flex: 1;"><span>محمد رجب</span><span style="font-size: 0.8em; color: var(--primary-gold); font-weight: normal;">⚽ محمد رجب</span></div>
-</div>
-<div class="match-result"><div class="score-box" style="background: var(--success-green); color: white;">5</div><div class="score-box" style="background: var(--error-red); color: white;">1</div>
-</div>
-<div class="match-time">07:40 PM</div>
-</div>
-<div class="match-item">
-<div class="match-group">المجموعة 3</div>
-<div class="match-teams">
-<span>أحمد عماد</span>
-<span class="vs">VS</span>
-<span>يوسف التهامي</span>
-</div>
-<div class="match-result"><div class="score-box" style="background: var(--success-green); color: white;">2</div><div class="score-box" style="background: var(--error-red); color: white;">1</div>
-</div>
-<div class="match-time">08:20 PM</div>
-</div>
-</div>
-<!-- اليوم 8 -->
-<div class="day-card">
-<span class="day-label">اليوم 8</span>
-<div class="day-header">الأحد: 08-02-2026</div>
-<div class="match-item">
-<div class="match-group">المجموعة 4</div>
-<div class="match-teams"><div style="display: flex; flex-direction: column; align-items: flex-start; flex: 1;"><span>وليد ممدوح</span><span style="font-size: 0.8em; color: #aaa; font-weight: normal;">⚽ فارس ممدوح (2)، عمر ممدوح (2)، معتز محمد (2)، جمال عبدالناصر، عبدالله مسعود</span></div><span class_="vs">VS</span><div style="display: flex; flex-direction: column; align-items: flex-end; flex: 1;"><span>روزة</span></div></div>
-<div class="match-result">
-<div class="score-box" style="background: var(--success-green); color: white;">8</div>
-<div class="score-box" style="background: var(--error-red); color: white;">0</div>
-</div>
-<div class="match-time">08:00 PM</div>
-</div>
-<div class="match-item">
-<div class="match-group">المجموعة 5</div>
-<div class="match-teams"><div style="display: flex; flex-direction: column; align-items: flex-start; flex: 1;"><span>معاذ شريف</span><span style="font-size: 0.8em; color: #aaa; font-weight: normal;">⚽ محمد بكر، محمد مختار</span></div><span class_="vs">VS</span><div style="display: flex; flex-direction: column; align-items: flex-end; flex: 1;"><span>الوراقية</span><span style="font-size: 0.8em; color: var(--primary-gold); font-weight: normal;">⚽ محمد رمضان</span></div></div>
-<div class="match-result">
-<div class="score-box" style="background: var(--success-green); color: white;">2</div>
-<div class="score-box" style="background: var(--error-red); color: white;">1</div>
-</div>
-<div class="match-time">08:40 PM</div>
-</div>
-<div class="match-item">
-<div class="match-group">المجموعة 6</div>
-<div class="match-teams"><div style="display: flex; flex-direction: column; align-items: flex-start; flex: 1;"><span>أحمد إسماعيل</span><span style="font-size: 0.8em; color: #aaa; font-weight: normal;">⚽ محمود هاني، مؤمن، null</span></div><span class_="vs">VS</span><div style="display: flex; flex-direction: column; align-items: flex-end; flex: 1;"><span>القصر</span></div></div>
-<div class="match-result">
-<div class="score-box" style="background: var(--success-green); color: white;">3</div>
-<div class="score-box" style="background: var(--error-red); color: white;">0</div>
-</div>
-<div class="match-time">09:20 PM</div>
-</div>
-</div>
-<!-- اليوم 9 -->
-<div class="day-card">
-<span class="day-label">اليوم 9</span>
-<div class="day-header">الاثنين: 09-02-2026</div>
-<div class="match-item">
-<div class="match-group">المجموعة 1</div>
-<div class="match-teams"><div style="display: flex; flex-direction: column; align-items: flex-start; flex: 1;"><span>إسلام حسن</span><span style="font-size: 0.8em; color: #aaa; font-weight: normal;">⚽ الحاوي (7)، سبيرتو (3)، محمد فتح الله، احمد سعد</span></div><span class="vs">VS</span><div style="display: flex; flex-direction: column; align-items: flex-end; flex: 1;"><span>زياد عبد الوهاب</span><span style="font-size: 0.8em; color: var(--primary-gold); font-weight: normal;">⚽ زياد عبد الوهاب، محمد مصطفي، محمد معين</span></div>
-</div>
-<div class="match-result"><div class="score-box" style="background: var(--success-green); color: white;">12</div><div class="score-box" style="background: var(--error-red); color: white;">3</div>
-</div>
-<div class="match-time">07:00 PM</div>
-</div>
-<div class="match-item">
-<div class="match-group">المجموعة 6</div>
-<div class="match-teams"><div style="display: flex; flex-direction: column; align-items: flex-start; flex: 1;"><span>نسور البيضا</span><span style="font-size: 0.8em; color: #aaa; font-weight: normal;">⚽ شادي</span></div><span class="vs">VS</span><div style="display: flex; flex-direction: column; align-items: flex-end; flex: 1;"><span>منتخب البيضا</span></div>
-</div>
-<div class="match-result"><div class="score-box" style="background: var(--success-green); color: white;">1</div><div class="score-box" style="background: var(--error-red); color: white;">0</div>
-</div>
-<div class="match-time">07:40 PM</div>
-</div>
-<div class="match-item">
-<div class="match-group">المجموعة 3</div>
-<div class="match-teams"><div style="display: flex; flex-direction: column; align-items: flex-start; flex: 1;"><span>محمد سالم</span><span style="font-size: 0.8em; color: #aaa; font-weight: normal;">⚽ محمد سالم (3)، محمود عبده (3)</span></div><span class="vs">VS</span><div style="display: flex; flex-direction: column; align-items: flex-end; flex: 1;"><span>يوسف التهامي</span><span style="font-size: 0.8em; color: var(--primary-gold); font-weight: normal;">⚽ امير هاني</span></div>
-</div>
-<div class="match-result"><div class="score-box" style="background: var(--success-green); color: white;">6</div><div class="score-box" style="background: var(--error-red); color: white;">1</div>
-</div>
-<div class="match-time">08:20 PM</div>
-</div>
-</div>
-<!-- اليوم 10 -->
-<div class="day-card">
-<span class="day-label">اليوم 10</span>
-<div class="day-header">الثلاثاء: 10-02-2026</div>
-<div class="match-item">
-<div class="match-group">المجموعة 4</div>
-<div class="match-teams">
-<div style="display: flex; flex-direction: column; align-items: flex-start; flex: 1;">
-<span>نجوم الحمراء</span>
-<span style="font-size: 0.8em; color: #aaa; font-weight: normal;">⚽ حازم محمد (5)، يحيي سعيد (2)، احمد بسام</span>
-</div>
-<span class="vs">VS</span>
-<div style="display: flex; flex-direction: column; align-items: flex-end; flex: 1;">
-<span>روزة</span>
-</div>
-</div>
-<div class="match-result">
-<div class="score-box" style="background: var(--success-green); color: white;">8</div>
-<div class="score-box" style="background: var(--error-red); color: white;">0</div>
-</div>
-<div class="match-time">07:00 PM</div>
-</div>
-<div class="match-item">
-<div class="match-group">المجموعة 5</div>
-<div class="match-teams">
-<div style="display: flex; flex-direction: column; align-items: flex-start; flex: 1;">
-<span>أحمد منفي</span>
-<span style="font-size: 0.8em; color: #aaa; font-weight: normal;">⚽ منفي، مادا، جودا، اسماعيل، عيد</span>
-</div>
-<span class="vs">VS</span>
-<div style="display: flex; flex-direction: column; align-items: flex-end; flex: 1;">
-<span>معاذ شريف</span>
-<span style="font-size: 0.8em; color: var(--primary-gold); font-weight: normal;">⚽ محمد مختار (3)</span>
-</div>
-</div>
-<div class="match-result">
-<div class="score-box" style="background: var(--success-green); color: white;">4</div>
-<div class="score-box" style="background: var(--error-red); color: white;">3</div>
-</div>
-<div class="match-time">07:40 PM</div>
-</div>
-<div class="match-item">
-<div class="match-group">المجموعة 2</div>
-<div class="match-teams">
-<div style="display: flex; flex-direction: column; align-items: flex-start; flex: 1;">
-<span>محمد سامح</span>
-</div>
-<span class="vs">VS</span>
-<div style="display: flex; flex-direction: column; align-items: flex-end; flex: 1;">
-<span>محمد مصطفى قاسم</span>
-<span style="font-size: 0.8em; color: var(--primary-gold); font-weight: normal;">⚽ كوتو (3)</span>
-</div>
-</div>
-<div class="match-result">
-<div class="score-box" style="background: var(--error-red); color: white;">0</div>
-<div class="score-box" style="background: var(--success-green); color: white;">3</div>
-</div>
-<div class="match-time">08:20 PM</div>
-</div>
-</div>
-<!-- اليوم 11 -->
-<div class="day-card">
-<span class="day-label">اليوم 11</span>
-<div class="day-header">الأربعاء: 11-02-2026</div>
-<div class="match-item">
-<div class="match-group">المجموعة 6</div>
-<div class="match-teams">
-<div style="display: flex; flex-direction: column; align-items: flex-start; flex: 1;">
-<span>منتخب البيضا</span>
-<span style="font-size: 0.8em; color: #aaa; font-weight: normal;">⚽ توتو (3)</span>
-</div>
-<span class="vs">VS</span>
-<div style="display: flex; flex-direction: column; align-items: flex-end; flex: 1;">
-<span>أحمد إسماعيل</span>
-<span style="font-size: 0.8em; color: var(--primary-gold); font-weight: normal;">⚽ حماصه، سعد ابراهيم، مؤمن جمعة، كريم عوض</span>
-</div>
-</div>
-<div class="match-result">
-<div class="score-box" style="background: var(--error-red); color: white;">3</div>
-<div class="score-box" style="background: var(--success-green); color: white;">4</div>
-</div>
-<div class="match-time">07:00 PM</div>
-</div>
-<div class="match-item">
-<div class="match-group">المجموعة 2</div>
-<div class="match-teams">
-<div style="display: flex; flex-direction: column; align-items: flex-start; flex: 1;">
-<span>محمد سامح</span>
-</div>
-<span class="vs">VS</span>
-<div style="display: flex; flex-direction: column; align-items: flex-end; flex: 1;">
-<span>العدلي</span>
-<span style="font-size: 0.8em; color: var(--primary-gold); font-weight: normal;">⚽ زيزو (3)، إيهاب السيد (3)، طيخا</span>
-</div>
-</div>
-<div class="match-result">
-<div class="score-box" style="background: var(--error-red); color: white;">0</div>
-<div class="score-box" style="background: var(--success-green); color: white;">7</div>
-</div>
-<div class="match-time">07:40 PM</div>
-</div>
-<div class="match-item">
-<div class="match-group">المجموعة 1</div>
-<div class="match-teams">
-<div style="display: flex; flex-direction: column; align-items: flex-start; flex: 1;">
-<span>أحمد محسن</span>
-<span style="font-size: 0.8em; color: #aaa; font-weight: normal;">⚽ أحمد بخيت (2)</span>
-</div>
-<span class="vs">VS</span>
-<div style="display: flex; flex-direction: column; align-items: flex-end; flex: 1;">
-<span>عبده ربيع</span>
-<span style="font-size: 0.8em; color: var(--primary-gold); font-weight: normal;">⚽ عبودة وليد (2)، عبدالله احمد</span>
-</div>
-</div>
-<div class="match-result">
-<div class="score-box" style="background: var(--error-red); color: white;">2</div>
-<div class="score-box" style="background: var(--success-green); color: white;">3</div>
-</div>
-<div class="match-time">08:20 PM</div>
-</div>
-</div>
-<!-- اليوم 12 -->
-<div class="day-card">
-<span class="day-label">اليوم 12</span>
-<div class="day-header">السبت: 14-02-2026</div>
-<div class="match-item">
-<div class="match-group">المجموعة 4</div>
-<div class="match-teams">
-<span>وليد ممدوح</span>
-<span class="vs">VS</span>
-<span>أنطونياديس</span>
-</div>
-<div class="match-result">
-<div class="score-box">_</div>
-<div class="score-box">_</div>
-</div>
-<div class="match-time">07:00 PM</div>
-</div>
-<div class="match-item">
-<div class="match-group">المجموعة 3</div>
-<div class="match-teams">
-<span>احمد عماد</span>
-<span class="vs">VS</span>
-<span>ابراهيم علاء</span>
-</div>
-<div class="match-result">
-<div class="score-box">_</div>
-<div class="score-box">_</div>
-</div>
-<div class="match-time">07:40 PM</div>
-</div>
-<div class="match-item">
-<div class="match-group">المجموعة 4</div>
-<div class="match-teams">
-<span>الوراقية</span>
-<span class="vs">VS</span>
-<span>محمد رجب</span>
-</div>
-<div class="match-result">
-<div class="score-box">_</div>
-<div class="score-box">_</div>
-</div>
-<div class="match-time">08:20 PM</div>
-</div>
-</div>
-</div>
-<!-- ✅ شرح النظام (تمت إضافته هنا) -->
-<div class="rules-box" style="display: none;">
-<h3>📌 شرح نظام التأهل والأدوار الإقصائية <span class="badge">مهم</span></h3>
-<p>
-                النظام معمول عشان يكافئ المتصدرين الأقوى ويقلّل مواجهة الأوائل لبعض بدري قدر الإمكان.
-            </p>
-<ul>
-<li><strong>✅ المتأهلون إلى دور الـ16:</strong> 6 أوائل + 6 تواني + 4 أفضل توالت = <strong>16 فريق</strong>.</li>
-<li><strong>⭐ طريقة ترتيب الأوائل/التواني/التوالت:</strong> النقاط → فارق الأهداف → الأهداف المسجلة → (قرعة عند اللزوم).</li>
-<li>
-<strong>🔥 دور الـ16:</strong>
-<br/>• <strong>أفضل 4 أوائل</strong> يواجهون <strong>أفضل 4 توالت</strong> (أفضل أول × أضعف ثالث).
-                    <br/>• <strong>أول (ترتيب 5)</strong> × <strong>ثاني (ترتيب 6)</strong>، و<strong>أول (ترتيب 6)</strong> × <strong>ثاني (ترتيب 5)</strong>.
-                    <br/>• باقي <strong>التواني (ترتيب 1-4)</strong> يتواجهون: (1×4) و(2×3).
-                </li>
-<li>
-<strong>✅ توزيع ربع النهائي (عشان الأوائل مايبقوش ضد بعض بدري):</strong>
-<br/>• الفائز من مباراة (1) يلعب مع الفائز من مباراة (7)
-                    <br/>• الفائز من مباراة (4) يلعب مع الفائز من مباراة (8)
-                    <br/>• الفائز من مباراة (2) يلعب مع الفائز من مباراة (5)
-                    <br/>• الفائز من مباراة (3) يلعب مع الفائز من مباراة (6)
-                </li>
-<li><strong>🏆 بعد كده:</strong> خروج مغلوب (ربع نهائي → نصف نهائي → نهائي).</li>
-</ul>
-<div class="rules-note">
-                📣 <strong>ملاحظة:</strong> المسميات (ترتيب 1، 2، 3...) تتحدد رسميًا بعد نهاية دور المجموعات حسب الترتيب العام.
+    <div class="container">
+        <div class="header">
+            <h1>دورة مركز شباب أبو صالح</h1>
+            <div class="year">2026</div>
+        </div>
+
+        <h2 class="section-title">👤 المسؤول عن التنظيم</h2>
+        <div class="organizer-section">
+            <img alt="أحمد مدحت علوش" class="organizer-img" src="1.jpeg"/>
+            <div style="font-size: 1.5em; font-weight: 900; color: var(--primary-gold);">أحمد مدحت علوش</div>
+            <div style="color: #ccc;">المسؤول عن إنشاء الموقع والتنظيم</div>
+        </div>
+
+        <h2 class="section-title">🏆 تصفيات الكأس - دور الـ 16</h2>
+        <div class="bracket-container">
+            <!-- دور الـ 16 -->
+            <div class="bracket-round">
+                <div class="round-title">دور الـ 16</div>
+                
+                <div class="bracket-match">
+                    <div class="match-info"><span>مباراة 1</span><span>الأحد 15-02</span></div>
+                    <div class="bracket-team"><span class="team-name">محمد سالم</span><span class="team-score">_</span></div>
+                    <div class="bracket-team"><span class="team-name">أنطونياديس</span><span class="team-score">_</span></div>
+                </div>
+
+                <div class="bracket-match">
+                    <div class="match-info"><span>مباراة 2</span><span>الأحد 15-02</span></div>
+                    <div class="bracket-team"><span class="team-name">إسلام حسن</span><span class="team-score">_</span></div>
+                    <div class="bracket-team"><span class="team-name">معاذ شريف</span><span class="team-score">_</span></div>
+                </div>
+
+                <div class="bracket-match">
+                    <div class="match-info"><span>مباراة 3</span><span>الأحد 15-02</span></div>
+                    <div class="bracket-team"><span class="team-name">الوراقية</span><span class="team-score">_</span></div>
+                    <div class="bracket-team"><span class="team-name">نسور البيضا</span><span class="team-score">_</span></div>
+                </div>
+
+                <div class="bracket-match">
+                    <div class="match-info"><span>مباراة 4</span><span>قريباً</span></div>
+                    <div class="bracket-team"><span class="team-name">عمرو عون</span><span class="team-score">_</span></div>
+                    <div class="bracket-team"><span class="team-name">أحمد محسن</span><span class="team-score">_</span></div>
+                </div>
+
+                <div class="bracket-match">
+                    <div class="match-info"><span>مباراة 5</span><span>قريباً</span></div>
+                    <div class="bracket-team"><span class="team-name">نجوم الحمراء</span><span class="team-score">_</span></div>
+                    <div class="bracket-team"><span class="team-name">يوسف التهامي</span><span class="team-score">_</span></div>
+                </div>
+
+                <div class="bracket-match">
+                    <div class="match-info"><span>مباراة 6</span><span>قريباً</span></div>
+                    <div class="bracket-team"><span class="team-name">أحمد إسماعيل</span><span class="team-score">_</span></div>
+                    <div class="bracket-team"><span class="team-name">أحمد عماد</span><span class="team-score">_</span></div>
+                </div>
+
+                <div class="bracket-match">
+                    <div class="match-info"><span>مباراة 7</span><span>قريباً</span></div>
+                    <div class="bracket-team"><span class="team-name">أحمد منفي</span><span class="team-score">_</span></div>
+                    <div class="bracket-team"><span class="team-name">العدلي</span><span class="team-score">_</span></div>
+                </div>
+
+                <div class="bracket-match">
+                    <div class="match-info"><span>مباراة 8</span><span>قريباً</span></div>
+                    <div class="bracket-team"><span class="team-name">وليد ممدوح</span><span class="team-score">_</span></div>
+                    <div class="bracket-team"><span class="team-name">عبده ربيع</span><span class="team-score">_</span></div>
+                </div>
             </div>
-</div>
-<!-- ✅ الأدوار الإقصائية (تم تعديل ربع النهائي لتجنب مواجهة الأوائل لبعض مبكرًا) -->
-<h2 class="section-title" style="display: none;">🔥 الأدوار الإقصائية</h2>
-<div class="knockout-container" style="display: none;">
-<div class="knockout-bracket">
-<!-- Round of 16 -->
-<div class="bracket-column">
-<div class="table-header" style="font-size: 1em; margin-bottom: 10px;">دور الـ 16</div>
-<!-- (1) -->
-<div class="bracket-match">
-<div class="team"><span>أفضل أول (ترتيب 1)</span><span>_</span></div>
-<div class="team"><span>أفضل ثالث (ترتيب 4)</span><span>_</span></div>
-</div>
-<!-- (2) -->
-<div class="bracket-match">
-<div class="team"><span>أفضل أول (ترتيب 2)</span><span>_</span></div>
-<div class="team"><span>أفضل ثالث (ترتيب 3)</span><span>_</span></div>
-</div>
-<!-- (3) -->
-<div class="bracket-match">
-<div class="team"><span>أفضل أول (ترتيب 3)</span><span>_</span></div>
-<div class="team"><span>أفضل ثالث (ترتيب 2)</span><span>_</span></div>
-</div>
-<!-- (4) -->
-<div class="bracket-match">
-<div class="team"><span>أفضل أول (ترتيب 4)</span><span>_</span></div>
-<div class="team"><span>أفضل ثالث (ترتيب 1)</span><span>_</span></div>
-</div>
-<!-- (5) -->
-<div class="bracket-match">
-<div class="team"><span>أول (ترتيب 5)</span><span>_</span></div>
-<div class="team"><span>ثاني (ترتيب 6)</span><span>_</span></div>
-</div>
-<!-- (6) -->
-<div class="bracket-match">
-<div class="team"><span>أول (ترتيب 6)</span><span>_</span></div>
-<div class="team"><span>ثاني (ترتيب 5)</span><span>_</span></div>
-</div>
-<!-- (7) -->
-<div class="bracket-match">
-<div class="team"><span>ثاني (ترتيب 1)</span><span>_</span></div>
-<div class="team"><span>ثاني (ترتيب 4)</span><span>_</span></div>
-</div>
-<!-- (8) -->
-<div class="bracket-match">
-<div class="team"><span>ثاني (ترتيب 2)</span><span>_</span></div>
-<div class="team"><span>ثاني (ترتيب 3)</span><span>_</span></div>
-</div>
-</div>
-<!-- Quarter Finals -->
-<div class="bracket-column">
-<div class="table-header" style="font-size: 1em; margin-bottom: 10px;">ربع النهائي</div>
-<!-- QF1: (1) vs (7) -->
-<div class="bracket-match">
-<div class="team"><span>فائز (1)</span><span>_</span></div>
-<div class="team"><span>فائز (7)</span><span>_</span></div>
-</div>
-<!-- QF2: (4) vs (8) -->
-<div class="bracket-match">
-<div class="team"><span>فائز (4)</span><span>_</span></div>
-<div class="team"><span>فائز (8)</span><span>_</span></div>
-</div>
-<!-- QF3: (2) vs (5) -->
-<div class="bracket-match">
-<div class="team"><span>فائز (2)</span><span>_</span></div>
-<div class="team"><span>فائز (5)</span><span>_</span></div>
-</div>
-<!-- QF4: (3) vs (6) -->
-<div class="bracket-match">
-<div class="team"><span>فائز (3)</span><span>_</span></div>
-<div class="team"><span>فائز (6)</span><span>_</span></div>
-</div>
-</div>
-<!-- Semi Finals -->
-<div class="bracket-column">
-<div class="table-header" style="font-size: 1em; margin-bottom: 10px;">نصف النهائي</div>
-<div class="bracket-match">
-<div class="team"><span>فائز ربع (1)</span><span>_</span></div>
-<div class="team"><span>فائز ربع (2)</span><span>_</span></div>
-</div>
-<div class="bracket-match">
-<div class="team"><span>فائز ربع (3)</span><span>_</span></div>
-<div class="team"><span>فائز ربع (4)</span><span>_</span></div>
-</div>
-</div>
-<!-- Final -->
-<div class="bracket-column">
-<div class="table-header" style="font-size: 1em; margin-bottom: 10px;">النهائي</div>
-<div class="bracket-match" style="border: 2px solid var(--primary-gold);">
-<div class="team"><span>فائز نصف (1)</span><span>_</span></div>
-<div class="team"><span>فائز نصف (2)</span><span>_</span></div>
-</div>
-</div>
-</div>
-</div>
-<div style="text-align: center; margin-top: 50px; color: #888; font-size: 0.9em;">
-<p>جميع الحقوق محفوظة © 2026 - دورة أبو صالح</p>
-</div>
-</div>
+
+            <!-- ربع النهائي -->
+            <div class="bracket-round">
+                <div class="round-title">ربع النهائي</div>
+                <div class="bracket-match">
+                    <div class="bracket-team"><span class="team-name">فائز (1)</span><span class="team-score">_</span></div>
+                    <div class="bracket-team"><span class="team-name">فائز (2)</span><span class="team-score">_</span></div>
+                </div>
+                <div class="bracket-match">
+                    <div class="bracket-team"><span class="team-name">فائز (3)</span><span class="team-score">_</span></div>
+                    <div class="bracket-team"><span class="team-name">فائز (4)</span><span class="team-score">_</span></div>
+                </div>
+                <div class="bracket-match">
+                    <div class="bracket-team"><span class="team-name">فائز (5)</span><span class="team-score">_</span></div>
+                    <div class="bracket-team"><span class="team-name">فائز (6)</span><span class="team-score">_</span></div>
+                </div>
+                <div class="bracket-match">
+                    <div class="bracket-team"><span class="team-name">فائز (7)</span><span class="team-score">_</span></div>
+                    <div class="bracket-team"><span class="team-name">فائز (8)</span><span class="team-score">_</span></div>
+                </div>
+            </div>
+
+            <!-- نصف النهائي -->
+            <div class="bracket-round">
+                <div class="round-title">نصف النهائي</div>
+                <div class="bracket-match">
+                    <div class="bracket-team"><span class="team-name">فائز ربع (1)</span><span class="team-score">_</span></div>
+                    <div class="bracket-team"><span class="team-name">فائز ربع (2)</span><span class="team-score">_</span></div>
+                </div>
+                <div class="bracket-match">
+                    <div class="bracket-team"><span class="team-name">فائز ربع (3)</span><span class="team-score">_</span></div>
+                    <div class="bracket-team"><span class="team-name">فائز ربع (4)</span><span class="team-score">_</span></div>
+                </div>
+            </div>
+
+            <!-- النهائي -->
+            <div class="bracket-round">
+                <div class="round-title">النهائي</div>
+                <div class="bracket-match" style="border: 2px solid var(--primary-gold);">
+                    <div class="bracket-team"><span class="team-name">طرف النهائي 1</span><span class="team-score">_</span></div>
+                    <div class="bracket-team"><span class="team-name">طرف النهائي 2</span><span class="team-score">_</span></div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title">📅 جدول مباريات يوم الأحد</h2>
+        <div class="days-grid">
+            <div class="day-card">
+                <div class="day-header">الأحد: 15-02-2026</div>
+                
+                <div class="match-item">
+                    <div class="match-time">07:00 PM - 07:40 PM</div>
+                    <div class="match-teams">
+                        <span>محمد سالم</span>
+                        <span class="vs">VS</span>
+                        <span>أنطونياديس</span>
+                    </div>
+                </div>
+
+                <div class="match-item">
+                    <div class="match-time">07:40 PM - 08:20 PM</div>
+                    <div class="match-teams">
+                        <span>إسلام حسن</span>
+                        <span class="vs">VS</span>
+                        <span>معاذ شريف</span>
+                    </div>
+                </div>
+
+                <div class="match-item">
+                    <div class="match-time">09:00 PM</div>
+                    <div class="match-teams">
+                        <span>الوراقية</span>
+                        <span class="vs">VS</span>
+                        <span>نسور البيضا</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title">🏆 الإحصائيات الفردية</h2>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="table-header">⚽ أفضل هداف</div>
+                <div class="stat-item"><span>محمد سالم</span><span class="stat-value">12</span></div>
+                <div class="stat-item"><span>إسلام حسن</span><span class="stat-value">8</span></div>
+                <div class="stat-item"><span>حازم محمد</span><span class="stat-value">7</span></div>
+            </div>
+            <div class="stat-card">
+                <div class="table-header">🧤 نظافة الشباك</div>
+                <div class="stat-item"><span>معاذ (عمرو عون)</span><span class="stat-value">1</span></div>
+                <div class="stat-item"><span>عبده عطية</span><span class="stat-value">1</span></div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
